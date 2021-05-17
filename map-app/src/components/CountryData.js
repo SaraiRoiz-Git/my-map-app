@@ -13,6 +13,11 @@ class CountryData extends React.Component {
     componentDidMount() {
         this.spreadData()
     }
+    
+    componentDidUpdate() {
+        this.spreadData()
+    }
+
 
     spreadData() {
         const country = this.props.country;
@@ -37,8 +42,6 @@ class CountryData extends React.Component {
                     })
                     console.log(countryData)
                 }
-
-
             })
     }
 

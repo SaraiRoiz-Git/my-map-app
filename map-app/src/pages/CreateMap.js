@@ -1,70 +1,39 @@
 import React from "react";
-import { checkUserValidity } from "../utility";
-import { Col, Container, Form } from 'react-bootstrap';
-import countries from '../data/countries.json'
-import SearchBox from "../components/SearchBox";
-import CountryData from "../components/CountryData";
+import { Button, Col, Container, Form } from 'react-bootstrap';
+import moment from 'moment';
+import GoogleMap from "../components/GoogleMap";
 
 class CreateMap extends React.Component {
     constructor(props) {
-        super(props);
-        this.countries = countries;
-        this.state = {
-            input: '',
-            chosenCountry: '',
-            filteredList: ''
-        }
-    }
-    componentDidMount() {
-        checkUserValidity(this.props.user)
+        super(props)
+
     }
 
+    addMap() {
 
-    searchTextChanged = (filter) => {
-        const filteredList = this.countries.filter((country) => {
-            return country.name.toLowerCase().includes(filter.toLowerCase())
-        })
-
-        this.setState({
-            filteredList: filteredList,
-            input: filter
-        })
-    }
-
-    chooseACountry = (country) => {
-        this.setState({
-            chosenCountry: country,
-            filteredList: '',
-            input: country,
-
-        })
     }
 
     render() {
         return (
             <Container>
-                <div className="p-create-map">
-                    <div>Map will be here</div>
-                    <div className="countries">
-                        <Col lg="4" md="6" sm="12">
-                            <SearchBox
-                                search={this.state.input}
-                                placeHolder={'Choose a country'}
-                                result={this.state.filteredList}
-                                onSearchChanged={this.searchTextChanged}
-                                onResultSelected={this.chooseACountry}>
-                            </SearchBox>
-                        </Col>
+                <div className="title">{this.props.country} Title</div>
+                <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
+                <Col lg="4" md="6" sm="12">
+                    <Form >
+                        <Form.Group>
+                            <Form.Control type="text" placeholder="Add your own sub title" />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                            <Form.Control as="textarea" rows={3} placeholder="Add Free text" />
 
-
-                    </div>
-                    <div>
-                        country info will be here
-                        <CountryData
-                            country={this.state.chosenCountry}>
-                        </CountryData>
-                    </div>
-                </div>
+                        </Form.Group>
+                        <Button type="button"
+                            variant="info"
+                            onClick={this.addMap()}>
+                            Create Map
+                </Button>
+                    </Form>
+                </Col>
             </Container >
 
         )

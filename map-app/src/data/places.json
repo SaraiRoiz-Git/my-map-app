@@ -1,0 +1,50 @@
+[
+    {
+        "code": "IL",
+        "category": "shopping",
+        "title": "Zara",
+        "rate": "1",
+        "free text": "free text will be here",
+        "map": ""
+    },
+    {
+        "code": "IL",
+        "category": "shopping",
+        "title": "H&M",
+        "rate": "3",
+        "free text": "free text will be here",
+        "map": ""
+    },
+    {
+        "code": "IL",
+        "category": "shopping",
+        "title": "Fling Tiger",
+        "rate": "1",
+        "free text": "free text will be here",
+        "map": ""
+    },
+    {
+        "code": "IL",
+        "category": "hotels",
+        "title": "isrotel",
+        "rate": "1",
+        "free text": "my booked hotel",
+        "map": ""
+    },
+    {
+        "code": "IL",
+        "category": "food",
+        "title": "Magazino",
+        "rate": "1",
+        "free text": "free text will be here",
+        "map": ""
+    },
+    {
+        "code": "IL",
+        "category": "shopping",
+        "title": "Zara",
+        "rate": "1",
+        "free text": "free text will be here",
+        "map": ""
+    }
+]
