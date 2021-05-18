@@ -25,3 +25,9 @@
     margin: 0;
     padding: 0;
   }
+
+  .g-map{
+    height: 60vh;
+    width: 80vh%; 
+    margin: auto;
+  }

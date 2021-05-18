@@ -13,7 +13,7 @@ class AppNavbar extends React.Component {
 
         const login = (!this.props.user) ? <Nav.Link href="/#/login" >Sign in</Nav.Link> : null;
         const logout = this.props.user ? <Nav.Link href="/#/"
-            onClick={() => this.props.logout()}>Sign out</Nav.Link> : null;
+         onClick={() => this.props.logout()}>Sign out</Nav.Link> : null;
         const userName = (this.props.user) ? <Nav.Link href="/#/login" >Hello {this.props.user.name}</Nav.Link> : null;
 
         return (

@@ -7,6 +7,7 @@ import CountryData from "../components/CountryData";
 import CreateMap from "./CreateMap";
 import GoogleMap from "../components/GoogleMap";
 import GMap from "../components/GMap";
+import moment from 'moment';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class HomePage extends React.Component {
         this.countries = countries;
         this.state = {
             input: '',
-            chosenCountry: '',
+            country: '',
             filteredList: ''
         }
     }
@@ -31,7 +32,6 @@ class HomePage extends React.Component {
         const filteredList = this.countries.filter((country) => {
             return country.name.toLowerCase().includes(filter.toLowerCase())
         })
-
         this.setState({
             filteredList: filteredList,
             input: filter
@@ -40,7 +40,7 @@ class HomePage extends React.Component {
 
     chooseACountry = (country) => {
         this.setState({
-            chosenCountry: country,
+            country: country,
             filteredList: '',
             input: country,
 
@@ -50,12 +50,24 @@ class HomePage extends React.Component {
     createMap() {
         window.location.href = '/#/create-map'
     }
+
+    addMap() {
+    }
+
+    setParameters = (obj) => {
+        this.setState(obj)
+        this.setState({
+            input:obj.country
+        })
+        console.log(this.state)
+        
+    }
+
     render() {
         return (
-            <div className="screen">
-            
+            <Container className="screen">
+                <GMap setParameters={this.setParameters}></GMap>
                 <div className="p-create-map">
-                    <div>Map will be here</div>
                     <div className="countries">
                         <Col lg="4" md="6" sm="12">
                             <SearchBox
@@ -69,23 +81,33 @@ class HomePage extends React.Component {
 
                     </div>
                     <div>
-                        country info will be here
                         <CountryData
-                            country={this.state.chosenCountry}>
+                            country={this.state.country}>
                         </CountryData>
                     </div>
-                    <Button
-                        variant="info"
-                        type="button"
-                        onClick={this.createMap}>
-                        Create Map
-                </Button>
+                    <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
+                    <Col lg="4" md="6" sm="12">
+                        <Form >
+                            <Form.Group>
+                                <Form.Control type="text" placeholder="Add your own sub title" />
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    placeholder="Add Free text" />
+                            </Form.Group>
+                            <Button type="button"
+                                variant="info"
+                                onClick={this.addMap()}>
+                                Create Map
+                            </Button>
+                        </Form>
+                    </Col>
                 </div>
-                 <div >
-                    <GMap></GMap>
+                <div >
                 </div>
-
-            </div >
+            </Container >
 
         )
 

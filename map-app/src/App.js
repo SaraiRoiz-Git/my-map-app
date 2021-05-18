@@ -14,7 +14,8 @@ import CreateMap from './pages/CreateMap';
 import EditMapList from './pages/EditMapList';
 
 import user from './data/users.json'
-
+import maps from './data/users.json'
+import places from './data/users.json'
 class App extends React.Component {
 
   constructor(props) {
@@ -23,9 +24,12 @@ class App extends React.Component {
       user: {
         name: "Sarai",
         email: "sr.roiz@gmail.com",
-        pwd: 'pwd'
+        pwd: "pwd",
+        currentMap:""
       },
-      userslist: user
+      userslist: user,
+      maps:maps,
+      places:places
     }
   }
 
