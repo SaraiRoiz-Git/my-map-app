@@ -28,6 +28,10 @@
 
   .g-map{
     height: 60vh;
-    width: 80vh%; 
+    width: 80%; 
     margin: auto;
+  }
+
+  .edit{
+    display: flex;
   }
