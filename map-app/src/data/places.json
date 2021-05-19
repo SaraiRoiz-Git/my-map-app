@@ -4,7 +4,7 @@
         "category": "shopping",
         "title": "Zara",
         "rate": "1",
-        "free text": "free text will be here",
+        "freeText": "free text will be here",
         "map": ""
     },
     {
@@ -12,7 +12,7 @@
         "category": "shopping",
         "title": "H&M",
         "rate": "3",
-        "free text": "free text will be here",
+        "freeText": "free text will be here",
         "map": ""
     },
     {
@@ -20,7 +20,7 @@
         "category": "shopping",
         "title": "Fling Tiger",
         "rate": "1",
-        "free text": "free text will be here",
+        "freeText": "free text will be here",
         "map": ""
     },
     {
@@ -28,7 +28,7 @@
         "category": "hotels",
         "title": "isrotel",
         "rate": "1",
-        "free text": "my booked hotel",
+        "freeText": "my booked hotel",
         "map": ""
     },
     {
@@ -36,7 +36,7 @@
         "category": "food",
         "title": "Magazino",
         "rate": "1",
-        "free text": "free text will be here",
+        "freeText": "free text will be here",
         "map": ""
     },
     {
@@ -44,7 +44,7 @@
         "category": "shopping",
         "title": "Zara",
         "rate": "1",
-        "free text": "free text will be here",
+        "freeText": "free text will be here",
         "map": ""
     }
 ]

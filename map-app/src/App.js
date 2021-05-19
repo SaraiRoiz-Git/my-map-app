@@ -14,8 +14,9 @@ import CreateMap from './pages/CreateMap';
 import EditMapList from './pages/EditMapList';
 
 import user from './data/users.json'
-import maps from './data/users.json'
-import places from './data/users.json'
+import maps from './data/maps.json'
+import places from './data/places.json'
+import Lists from './pages/Lists';
 class App extends React.Component {
 
   constructor(props) {
@@ -25,11 +26,11 @@ class App extends React.Component {
         name: "Sarai",
         email: "sr.roiz@gmail.com",
         pwd: "pwd",
-        currentMap:""
+        currentMap: ""
       },
       userslist: user,
-      maps:maps,
-      places:places
+      maps: maps,
+      places: places,
     }
   }
 
@@ -43,7 +44,6 @@ class App extends React.Component {
     this.setState({
       user: userObj
     })
-
   }
 
   addUser = (user) => {
@@ -53,6 +53,11 @@ class App extends React.Component {
     })
   }
 
+  addMap = (map) => {
+    this.setState({
+      maps: this.state.maps.concat(map)
+    })
+  }
   render() {
     return (
       <HashRouter>
@@ -61,39 +66,47 @@ class App extends React.Component {
           user={this.state.user}
           logout={this.logout} />
 
-          <Route exact path={'/'}>
-            <HomePage></HomePage>
-          </Route>
+        <Route exact path={'/'}>
+          <HomePage
+           addMap={this.addMap}
+          ></HomePage>
+        </Route>
 
-          <Route exact path={'/login'}>
-            <Login
-              userslist={this.state.userslist}
-              login={this.login}></Login>
-          </Route>
+        <Route exact path={'/login'}>
+          <Login
+            userslist={this.state.userslist}
+            login={this.login}></Login>
+        </Route>
 
-          <Route exact path={'/signup'}>
-            <Signup addUser={this.addUser}></Signup>
-          </Route>
+        <Route exact path={'/signup'}>
+          <Signup addUser={this.addUser}></Signup>
+        </Route>
 
-          <Route exact path={'/maps'}>
-            <Maps
-              user={this.state.user}>
+        <Route exact path={'/maps'}>
+          <Maps
+            user={this.state.user}
+            list={this.state.maps}>
 
-            </Maps>
-          </Route>
+          </Maps>
+        </Route>
 
-          <Route exact path={'/create-map'}>
-            <CreateMap
-              user={this.state.user}>
-            </CreateMap>
-          </Route>
+        <Route exact path={'/create-map'}>
+          <CreateMap
+            user={this.state.user}>
+          </CreateMap>
+        </Route>
+        <Route exact path={'/list/:id'}>
+          <Lists
+            user={this.state.user}
+            list={this.state.places}>
+          </Lists>
+        </Route>
+        <Route exact path={'/edit-list/:id'}>
+          <EditMapList
+            user={this.state.user}>
 
-          <Route exact path={'/edit-list'}>
-            <EditMapList
-              user={this.state.user}>
-
-            </EditMapList>
-          </Route>
+          </EditMapList>
+        </Route>
 
       </HashRouter>
     );

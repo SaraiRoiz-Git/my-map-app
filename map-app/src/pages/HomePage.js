@@ -8,6 +8,7 @@ import CreateMap from "./CreateMap";
 import GoogleMap from "../components/GoogleMap";
 import GMap from "../components/GMap";
 import moment from 'moment';
+import CountryMap from "../data/CountryMap";
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class HomePage extends React.Component {
             input: '',
             country: '',
             filteredList: ''
+
         }
     }
     componentDidMount() {
@@ -32,6 +34,7 @@ class HomePage extends React.Component {
         const filteredList = this.countries.filter((country) => {
             return country.name.toLowerCase().includes(filter.toLowerCase())
         })
+
         this.setState({
             filteredList: filteredList,
             input: filter
@@ -47,20 +50,41 @@ class HomePage extends React.Component {
         })
     }
 
-    createMap() {
+    createMap = () => {
         window.location.href = '/#/create-map'
     }
 
-    addMap() {
+    addMap = () => {
+        console.log(this.state)
+        const map = new CountryMap(
+            this.state.country,
+            this.state.lat,
+            this.state.lng,
+            moment().format("MMM Do YYYY"),
+            this.state.subTitle,
+            this.state.freeText)
+        this.props.addMap(map);
     }
 
     setParameters = (obj) => {
-        this.setState(obj)
         this.setState({
-            input:obj.country
+            country: obj.country,
+            input: obj.country,
+            lat: obj.lat,
+            lng: obj.lng
         })
-        console.log(this.state)
-        
+    }
+
+    updateSubTitle = (e) => {
+        this.setState({
+            subTitle: e.target.value
+        })
+    }
+
+    updateFreeText = (e) => {
+        this.setState({
+            freeText: e.target.value
+        })
     }
 
     render() {
@@ -89,17 +113,24 @@ class HomePage extends React.Component {
                     <Col lg="4" md="6" sm="12">
                         <Form >
                             <Form.Group>
-                                <Form.Control type="text" placeholder="Add your own sub title" />
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Add your own sub title"
+                                    onChange={this.updateSubTitle}
+                                    value={this.state.subTitle} />
                             </Form.Group>
                             <Form.Group>
                                 <Form.Control
                                     as="textarea"
                                     rows={3}
-                                    placeholder="Add Free text" />
+                                    placeholder="Add Free text"
+                                    onChange={this.updateFreeText}
+                                    value={this.state.freeText} />
                             </Form.Group>
                             <Button type="button"
                                 variant="info"
-                                onClick={this.addMap()}>
+                                onClick={this.addMap}
+                            >
                                 Create Map
                             </Button>
                         </Form>
@@ -108,9 +139,7 @@ class HomePage extends React.Component {
                 <div >
                 </div>
             </Container >
-
         )
-
     }
 }
 

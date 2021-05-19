@@ -21,11 +21,10 @@ class CountryData extends React.Component {
 
     spreadData() {
         const country = this.props.country;
-        console.log(country);
         fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
             .then(stream => stream.json())
             .then(data => {
-                console.log(data)
+            
                 if (data) {
 
                     const countryData = new Country(
@@ -40,7 +39,7 @@ class CountryData extends React.Component {
                     this.setState({
                         data: countryData
                     })
-                    console.log(countryData)
+                
                 }
             })
     }

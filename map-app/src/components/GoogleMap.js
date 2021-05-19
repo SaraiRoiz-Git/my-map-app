@@ -31,7 +31,7 @@ class GoogleMap extends React.Component {
             height: '100%',
         };
 
-        console.log(this.props.google)
+     
         return (
             <Map
           google={this.props.google}

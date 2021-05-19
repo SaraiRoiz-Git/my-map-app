@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
+import { withRouter } from "react-router";
+import GMap from "../components/GMap";
 
 
 class EditMapList extends React.Component {
@@ -16,9 +18,12 @@ class EditMapList extends React.Component {
     render() {
 
         return (
-        <Container>
+        <Container className="edit">
+            <div>
+                <GMap></GMap>
+            </div>
              <div className="p-edit-list">
-                <Col lg="4" md="6" sm="12">
+                <Col>
                     <Form >
                         <Form.Group>
                             <Form.Control type="text" placeholder="Search for a place" />
@@ -40,20 +45,20 @@ class EditMapList extends React.Component {
                         </Form.Group>
                         <div className="importance">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="importance" id="mostimportant"/>
+                                <label class="form-check-label" for="mostimportant">
                                    Mast visit
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
-                                <label class="form-check-label" for="flexRadioDefault2">
+                                <input class="form-check-input" type="radio" name="importance" id="midimportant" checked/>
+                                <label class="form-check-label" for="midimportant">
                                     Happy To visit
                                 </label>
                             </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
-                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    <input class="form-check-input" type="radio" name="importance" id="leastimportant" checked/>
+                                    <label class="form-check-label" for="leastimportant">
                                      Visit on time left
                                     </label>
                                 </div>
@@ -61,13 +66,6 @@ class EditMapList extends React.Component {
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Control as="textarea" rows={3} placeholder="Add Free text" />
                         </Form.Group>
-                        <Form>
-                        <Form.File 
-                            id="custom-file"
-                            label="add file on the place"
-                            custom
-                        />
-                        </Form>
                         <Button type="button"
                             variant="info"
                             onClick={this.addToMap()}>
@@ -83,4 +81,4 @@ class EditMapList extends React.Component {
     }
 }
 
-export default EditMapList;
+export default withRouter(EditMapList);
