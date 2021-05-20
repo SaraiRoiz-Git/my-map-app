@@ -15,16 +15,7 @@ class GMap extends React.Component {
             },
             zoom: 1
         }
-
     }
-    static defaultProps = {
-        center: {
-            lat: 41.95,
-            lng: -37.33
-        },
-        zoom: 1
-
-    };
 
     onMapClick = (e) => {
         const geocoder = new google.maps.Geocoder();
@@ -46,9 +37,7 @@ class GMap extends React.Component {
                             lat: e.lat,
                             lng: e.lng
                         }
-
                     })
-                    // console.log(this.state)
                 } else {
                     window.alert("No results found");
                 }
@@ -66,12 +55,12 @@ class GMap extends React.Component {
             // Important! Always set the container height explicitly
             <div className="g-map">
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: KEY }}
+                    bootstrapURLKeys={{ key: 'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8' }}
                     defaultCenter={this.state.center}
                     defaultZoom={this.state.zoom}
                     onClick={this.onMapClick}
                 >
-                     {/* <AnyReactComponent
+                    {/* <AnyReactComponent
                         lat={this.state.pin.lat}
                         lng={this.state.pin.lng}
                         text={this.state.pin.country}
