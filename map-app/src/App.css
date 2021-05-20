@@ -23,15 +23,37 @@
   html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0;  
   }
 
   .g-map{
-    height: 60vh;
+    height: 75vh;
     width: 80%; 
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .google-map{
+    width: 100%;
+  }
+  .edit{
+    width: 100%;
+    display: flex;
+  }
+
+  GoogleCharts{
+    margin-top: 100px;
+  }
+
+  #aaa {
+    height:100%;
+
+  }
+
+  Cart{
     margin: auto;
   }
 
-  .edit{
+
+  .list-container{
     display: flex;
   }

@@ -31,13 +31,7 @@ class GMap extends React.Component {
                         return country.types.includes("country")
                     })
 
-                    this.setState({
-                        pin: {
-                            country: res.formatted_address,
-                            lat: e.lat,
-                            lng: e.lng
-                        }
-                    })
+
                 } else {
                     window.alert("No results found");
                 }
@@ -55,16 +49,18 @@ class GMap extends React.Component {
             // Important! Always set the container height explicitly
             <div className="g-map">
                 <GoogleMapReact
+                    yesIWantToUseGoogleMapApiInternals
                     bootstrapURLKeys={{ key: 'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8' }}
+                    height={'100%'} width={'100%'}
                     defaultCenter={this.state.center}
                     defaultZoom={this.state.zoom}
-                    onClick={this.onMapClick}
+                // onClick={this.onMapClick}
                 >
-                    {/* <AnyReactComponent
-                        lat={this.state.pin.lat}
-                        lng={this.state.pin.lng}
-                        text={this.state.pin.country}
-                    />  */}
+                    <AnyReactComponent
+                        lat={32.07549}
+                        lng={34.775485}
+                        text={'Zara'}
+                    />
                 </GoogleMapReact>
             </div>
         );

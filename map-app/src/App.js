@@ -90,17 +90,13 @@ class App extends React.Component {
           </Maps>
         </Route>
 
-        <Route exact path={'/create-map'}>
-          <CreateMap
-            user={this.state.user}>
-          </CreateMap>
-        </Route>
         <Route exact path={'/list/:id'}>
           <Lists
             user={this.state.user}
             list={this.state.places}>
           </Lists>
         </Route>
+        
         <Route exact path={'/edit-list/:id'}>
           <EditMapList
             user={this.state.user}>

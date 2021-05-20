@@ -11,7 +11,7 @@ class CountryData extends React.Component {
     }
 
     componentDidMount() {
-        this.spreadData()
+      
     }
     
     componentDidUpdate() {
@@ -24,9 +24,9 @@ class CountryData extends React.Component {
         fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
             .then(stream => stream.json())
             .then(data => {
-            
+                console.log(data)
                 if (data) {
-
+                    console.log(data)
                     const countryData = new Country(
                         data[0].capital,
                         data[0].region,
@@ -47,13 +47,13 @@ class CountryData extends React.Component {
     render() {
 
         return (
-            <div className="p-edit-list">
+            <div className="map-data">
 
-                <div>{this.props.country}</div>
-                <div>{this.state.data.capital}</div>
-                <div>{this.state.data.region}</div>
-                <div>{this.state.data.population}</div>
-                <div>{this.state.data.demonym}</div>
+                <h4>{this.props.country}</h4>
+                <div>Capital:{this.state.data.capital}</div>
+                <div>Region:{this.state.data.region}</div>
+                <div>Population:{this.state.data.population}</div>
+                <div>Demonym:{this.state.data.demonym}</div>
                 {/* <div>{this.state.data.borders}</div>
                 <div>{this.state.data.languages}</div>
                 <div>{this.state.data.currencies}</div> */}

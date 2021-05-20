@@ -4,60 +4,79 @@ import React from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
 import { withRouter } from "react-router";
 import GMap from "../components/GMap";
-
+import Autocomplete from "react-google-autocomplete";
 
 class EditMapList extends React.Component {
     constructor(props) {
         super(props);
+        this.state={
+            importance:"2"
+        }
     }
 
     addToMap() {
 
     }
 
-    render() {
+    changeImportance=(e)=>{
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+        console.log(this.state)
+    }
 
+    render() {
+        console.log(this.state)
         return (
         <Container className="edit">
-            <div>
-                <GMap></GMap>
-            </div>
+          
              <div className="p-edit-list">
                 <Col>
+                <Autocomplete
+                        apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
+                        onPlaceSelected={(place) => {
+                        console.log(place);}}
+                        options={{types:["establishment"]}}
+                        />
                     <Form >
+                   
                         <Form.Group>
-                            <Form.Control type="text" placeholder="Search for a place" />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Control type="text" placeholder="My title" />
+                            <Form.Control   type="text" 
+                                            name="title" 
+                                            placeholder="My title" 
+                                            value={this.state.title} 
+                                            onChange={this.changeImportance}/>
                         </Form.Group>
                         <Form.Group controlId="exampleForm.SelectCustom">
-                            <Form.Control as="select" custom>
-                            <option>Select Category</option>
-                            <option>hotels</option>
-                            <option>Market Place</option>
-                            <option>Restaurnts</option>
-                            <option>Sites</option>
-                            <option>Shopping</option>
-                            <output>Transportation</output>
-                            <option>**** Add your on category***</option>
+                            <Form.Control   as="select" 
+                                            name="category" 
+                                            onChange={this.changeImportance} 
+                                            value={this.state.category}  custom>
+                            <option value="selectCategory">Select Category</option>
+                            <option value="hotels">hotels</option>
+                            <option value="market place">Market Place</option>
+                            <option value="restaurnts">Restaurnts</option>
+                            <option value="sites">Sites</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="">**** Add your on category***</option>
                             </Form.Control>
                         </Form.Group>
                         <div className="importance">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="importance" id="mostimportant"/>
+                                <input class="form-check-input" type="radio" name="importance" id="mostimportant" value="1" onClick={this.changeImportance} checked = {this.state.importance == "1"}/>
                                 <label class="form-check-label" for="mostimportant">
                                    Mast visit
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="importance" id="midimportant" checked/>
+                                <input class="form-check-input" type="radio" name="importance" id="midimportant" value="2" onClick={this.changeImportance} checked = {this.state.importance == "2"}/>
                                 <label class="form-check-label" for="midimportant">
                                     Happy To visit
                                 </label>
                             </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="importance" id="leastimportant" checked/>
+                                    <input class="form-check-input" type="radio" name="importance" id="leastimportant" value="3" onClick={this.changeImportance} checked = {this.state.importance == "3"}/>
                                     <label class="form-check-label" for="leastimportant">
                                      Visit on time left
                                     </label>
@@ -67,13 +86,17 @@ class EditMapList extends React.Component {
                             <Form.Control as="textarea" rows={3} placeholder="Add Free text" />
                         </Form.Group>
                         <Button type="button"
-                            variant="info"
+                            variant="info" 
                             onClick={this.addToMap()}>
                             Add to my list
                          
                         </Button>
                     </Form>
-                </Col>
+                </Col>                
+            </div>
+             <div className="g-map">
+                <GMap
+                ></GMap>
             </div>
         </Container>
            

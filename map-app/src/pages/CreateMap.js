@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Form } from 'react-bootstrap';
 import moment from 'moment';
-import GoogleMap from "../components/GoogleMap";
 
 class CreateMap extends React.Component {
     constructor(props) {
