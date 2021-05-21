@@ -2,15 +2,15 @@ import React from "react";
 import { Button, Container } from "react-bootstrap";
 import countries from '../data/countries.json'
 import GMap from "../components/GMap";
-import { checkUserValidity } from "../utility";
+import { checkUserValidity, getLatlngById } from "../utility";
 import { withRouter } from "react-router";
-
+// import { getLatlngById } from "../utility";
 class Lists extends React.Component {
     constructor(props) {
         super(props);
         this.url = window.location.href;
         this.id = this.props.match.params.id;
-        this.latlng = countries.find(country => country.country_code === this.id).latlng;
+        this.latlng =  getLatlngById(this.id);
       
     }
     componentDidMount() {

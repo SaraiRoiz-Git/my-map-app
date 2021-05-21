@@ -5,6 +5,7 @@ import { Button, Col, Container, Form } from "react-bootstrap";
 import { withRouter } from "react-router";
 import GMap from "../components/GMap";
 import ReactGoogleAutocomplete from "react-google-autocomplete";
+import { getLatlngById } from "../utility";
 
 class EditMapList extends React.Component {
     constructor(props) {
@@ -12,6 +13,8 @@ class EditMapList extends React.Component {
         this.state={
             importance:"2"
         }
+        this.id = this.props.match.params.id;
+        this.latlng =  getLatlngById(this.id);
     }
 
     addToMap() {
@@ -93,10 +96,10 @@ class EditMapList extends React.Component {
                 </Col>                
             </div>
              <div className="g-map">
-             {/* <GMap
-                        lat={11}
-                        lng={11}
-                    ></GMap> */}
+                <GMap
+                    lat={this.latlng[0]}
+                    lng={this.latlng[1]}
+                ></GMap>
             </div>
         </Container>
            

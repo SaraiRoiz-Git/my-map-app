@@ -6,7 +6,6 @@ class Maps extends React.Component {
     constructor(props) {
         super(props);
 
-
     }
     componentDidMount() {
         checkUserValidity(this.props.user)
