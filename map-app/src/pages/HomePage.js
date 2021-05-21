@@ -6,7 +6,8 @@ import SearchBox from "../components/SearchBox";
 import moment from 'moment';
 import CountryMap from "../data/CountryMap";
 import GoogleCharts from "../components/GoogleCharts";
-import allCountries from '../data/countriesForChart'
+import allCountries from '../data/countriesForChart';
+import home from '../img/home.jpg';
 
 class HomePage extends React.Component {
     constructor(props) {

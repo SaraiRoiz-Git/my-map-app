@@ -44,7 +44,7 @@ class GoogleCharts extends React.Component {
         <Chart className="mb-2"
           chartType="GeoChart"
           mapsApiKey="AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8"
-          height={'100%'} width={'100%'}
+          height={'100%'} width={'1000px'}
           regionClick={this.onMapClick}
           options={{
 

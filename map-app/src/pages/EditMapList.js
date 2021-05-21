@@ -11,7 +11,7 @@ class EditMapList extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            importance:"2"
+            importance:"1"
         }
         this.id = this.props.match.params.id;
         this.latlng =  getLatlngById(this.id);
@@ -39,9 +39,7 @@ class EditMapList extends React.Component {
                         this.setState({
                             "adress":place.formatted_address
                         })
-                        console.log('a')
                         Geocode.setApiKey('AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8');
-                        console.log('b')
                         Geocode.fromAddress(place.formatted_address).then(
                             (response) => {
                                 console.log(response.results[0].geometry.location)
@@ -119,8 +117,7 @@ class EditMapList extends React.Component {
             </div>
              <div className="g-map">
                 <GMap
-                    lat={this.latlng[0]}
-                    lng={this.latlng[1]}
+                    center={this.latlng}
                 ></GMap>
             </div>
         </Container>

@@ -39,18 +39,21 @@ class GMap extends React.Component {
     }
 
     createMarkers = (places) => {
+        if(places){
+            return places.map((place) => {
+                console.log('place', place)
+                return (<Marker
+                    lat={place.lat}
+                    lng={place.lng}
+                    text={place.title}
+                    address={place.addres}
+                    category={place.category}
+                >
+                </Marker>)
+            })
+        }
 
-        return places.map((place) => {
-            console.log('place', place)
-            return (<Marker
-                lat={place.lat}
-                lng={place.lng}
-                text={place.title}
-                address={place.addres}
-                category={place.category}
-            >
-            </Marker>)
-        })
+        
     }
 
     render() {

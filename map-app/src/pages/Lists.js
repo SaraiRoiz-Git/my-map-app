@@ -18,7 +18,7 @@ class Lists extends React.Component {
     }
 
     goTo = () => {
-
+        console.log(this.id)
         window.location.href = `/#/edit-list/${this.id}`
 
     }
