@@ -1,18 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 import { HashRouter, Route } from 'react-router-dom';
-
-
 import AppNavbar from './components/AppNavbar';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Maps from './pages/Maps';
-import CreateMap from './pages/CreateMap';
 import EditMapList from './pages/EditMapList';
-
 import user from './data/users.json'
 import maps from './data/maps.json'
 import places from './data/places.json'
@@ -33,19 +28,19 @@ class App extends React.Component {
       places: places,
     }
   }
-
+  // log out from app
   logout = () => {
     this.setState({
       user: null
     })
   }
-
+  // update the user on the app
   login = (userObj) => {
     this.setState({
       user: userObj
     })
   }
-
+  // add new user for list of users
   addUser = (user) => {
     this.setState({
       user: user,
@@ -53,11 +48,13 @@ class App extends React.Component {
     })
   }
 
+  // add new map to map list
   addMap = (map) => {
     this.setState({
       maps: this.state.maps.concat(map)
     })
   }
+
   render() {
     return (
       <HashRouter>
@@ -66,9 +63,11 @@ class App extends React.Component {
           user={this.state.user}
           logout={this.logout} />
 
-        <Route exact path={'/'}>
+        <Route exact path={'/home'}>
           <HomePage
-           addMap={this.addMap}
+            user={this.state.user}
+            addMap={this.addMap}
+            maps={this.state.maps}
           ></HomePage>
         </Route>
 
@@ -96,7 +95,6 @@ class App extends React.Component {
             list={this.state.places}>
           </Lists>
         </Route>
-        
         <Route exact path={'/edit-list/:id'}>
           <EditMapList
             user={this.state.user}>

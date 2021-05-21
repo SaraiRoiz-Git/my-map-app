@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
 import { withRouter } from "react-router";
 import GMap from "../components/GMap";
-import Autocomplete from "react-google-autocomplete";
+import ReactGoogleAutocomplete from "react-google-autocomplete";
 
 class EditMapList extends React.Component {
     constructor(props) {
@@ -22,17 +22,15 @@ class EditMapList extends React.Component {
         this.setState({
             [e.target.name]:e.target.value
         })
-        console.log(this.state)
     }
 
     render() {
-        console.log(this.state)
         return (
         <Container className="edit">
           
              <div className="p-edit-list">
                 <Col>
-                <Autocomplete
+                <ReactGoogleAutocomplete
                         apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
                         onPlaceSelected={(place) => {
                         console.log(place);}}
@@ -95,8 +93,10 @@ class EditMapList extends React.Component {
                 </Col>                
             </div>
              <div className="g-map">
-                <GMap
-                ></GMap>
+             {/* <GMap
+                        lat={11}
+                        lng={11}
+                    ></GMap> */}
             </div>
         </Container>
            

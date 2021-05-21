@@ -6,15 +6,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class GMap extends React.Component {
     constructor(props) {
-        const geocoder = new google.maps.Geocoder();
         super(props);
-        this.state = {
-            center: {
-                lat: 41.95,
-                lng: -37.33
-            },
-            zoom: 1
-        }
     }
 
     onMapClick = (e) => {
@@ -49,11 +41,10 @@ class GMap extends React.Component {
             // Important! Always set the container height explicitly
             <div className="g-map">
                 <GoogleMapReact
-                    yesIWantToUseGoogleMapApiInternals
                     bootstrapURLKeys={{ key: 'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8' }}
                     height={'100%'} width={'100%'}
-                    defaultCenter={this.state.center}
-                    defaultZoom={this.state.zoom}
+                    defaultCenter={this.props}
+                    defaultZoom={7}
                 // onClick={this.onMapClick}
                 >
                     <AnyReactComponent

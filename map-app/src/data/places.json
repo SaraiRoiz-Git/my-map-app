@@ -17,40 +17,36 @@
         "freeText": "free text will be here",
         "map": "",
         "lat": 31.75211,
-        "lng": 33.775485
+        "lng": 35.18755
     },
     {
-        "code": "IL",
+        "code": "ES",
         "category": "shopping",
-        "title": "Fling Tiger",
+        "title": "My Jungle",
         "rate": "1",
         "freeText": "free text will be here",
         "map": "",
-        "lat": 30.07549,
-        "lng": 30.775485
+        "lat": 32078706,
+        "lng": 35.01273
     },
     {
         "code": "IL",
         "category": "hotels",
         "title": "isrotel",
-        "rate": "1",
+        "rate": "2",
         "freeText": "my booked hotel",
-        "map": ""
+        "map": "",
+        "lat": 29.51341,
+        "lng": 34.92355
     },
     {
-        "code": "IL",
+        "code": "ES",
         "category": "food",
         "title": "Magazino",
-        "rate": "1",
+        "rate": "3",
         "freeText": "free text will be here",
-        "map": ""
-    },
-    {
-        "code": "IL",
-        "category": "shopping",
-        "title": "Zara",
-        "rate": "1",
-        "freeText": "free text will be here",
-        "map": ""
+        "map": "",
+        "lat": 32.06380,
+        "lng": 34.7796
     }
 ]

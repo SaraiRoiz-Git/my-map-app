@@ -22,11 +22,7 @@ class HomePage extends React.Component {
     componentDidMount() {
         checkUserValidity(this.props.user)
     }
-
-    componentDidUpdate() {
-    }
-
-
+    // filter countries by input
     searchTextChanged = (filter) => {
         const filteredList = this.countries.filter((country) => {
             return country.name.toLowerCase().includes(filter.toLowerCase())
@@ -37,34 +33,47 @@ class HomePage extends React.Component {
             input: filter
         })
     }
-
+    // add to state the chosen country
     chooseACountry = (country) => {
         this.setState({
             country: country,
             filteredList: '',
             input: country,
+            error: ""
         })
     }
 
     addMap = () => {
-        const data = countries.find((curr) => curr.name === this.state.country)
-        const map = new CountryMap(
-            this.state.country,
-            data.latlng[0],
-            data.latlng[1],
-            data.capital,
-            moment().format("MMM Do YYYY"),
-            this.state.subTitle,
-            this.state.freeText)
-        this.props.addMap(map);
-        window.location.href = '/#/maps'
+        const data = countries.find((curr) => curr.name === this.state.input)
+        if (this.props.maps.find((curr) => curr.country === this.state.input)) {
+            this.setState({
+                error: `*you alredy have map of ${this.state.input} in your maps`
+            })
+        }
+        else if (data) {
+            const map = new CountryMap(
+                this.state.country,
+                data.latlng[0],
+                data.latlng[1],
+                data.capital,
+                moment().format("MMM Do YYYY"),
+                this.state.subTitle,
+                this.state.freeText)
+            this.props.addMap(map);
+            window.location.href = '/#/maps'
+
+        } else {
+            this.setState({
+                error: "*please enter valid country"
+            })
+        }
     }
 
     setParameters = (obj) => {
-        // console.log("in setParams", obj)
         this.setState({
             country: obj[0],
-            input: obj[0]
+            input: obj[0],
+            error: ""
         })
     }
 
@@ -100,6 +109,7 @@ class HomePage extends React.Component {
                                 onSearchChanged={this.searchTextChanged}
                                 onResultSelected={this.chooseACountry}>
                             </SearchBox>
+                            <div>{this.state.error}</div>
                         </Col>
 
                     </div>
@@ -130,6 +140,7 @@ class HomePage extends React.Component {
                             <Button type="button"
                                 variant="info"
                                 onClick={this.addMap}
+                            //disabled
                             >
                                 Create Map
                             </Button>

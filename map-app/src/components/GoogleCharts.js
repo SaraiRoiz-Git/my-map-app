@@ -20,16 +20,13 @@ class GoogleCharts extends React.Component {
     let selectedId;
     try {
       selectedId = e.chartWrapper.getChart().getSelection();
-      // console.log(selectedId)
+      
 
     }
     catch (e) {
       return;
     }
     if (selectedId.length) {
-      // debugger;
-
-      //  console.log("Selected Country", this.props.data[selectedId[0].row + 1]);
       if (this.props.data[selectedId[0].row + 1]) {
         this.props.setParameters(this.props.data[selectedId[0].row + 1])
       }
@@ -44,7 +41,7 @@ class GoogleCharts extends React.Component {
       // Important! Always set the container height explicitly
       <div className="g-map">
 
-        <Chart className="mb-1"
+        <Chart className="mb-2"
           chartType="GeoChart"
           mapsApiKey="AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8"
           height={'100%'} width={'100%'}
