@@ -6,7 +6,7 @@ import { withRouter } from "react-router";
 import GMap from "../components/GMap";
 import ReactGoogleAutocomplete from "react-google-autocomplete";
 import { getLatlngById } from "../utility";
-
+import Geocode from "react-geocode";
 class EditMapList extends React.Component {
     constructor(props) {
         super(props);
@@ -36,8 +36,30 @@ class EditMapList extends React.Component {
                 <ReactGoogleAutocomplete
                         apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
                         onPlaceSelected={(place) => {
-                        console.log(place);}}
-                        options={{types:["establishment"]}}
+                        this.setState({
+                            "adress":place.formatted_address
+                        })
+                        console.log('a')
+                        Geocode.setApiKey('AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8');
+                        console.log('b')
+                        Geocode.fromAddress(place.formatted_address).then(
+                            (response) => {
+                                console.log(response.results[0].geometry.location)
+                              const { lat, lng } = response.results[0].geometry.location;
+                              console.log(lat, lng);
+
+                              this.setState({
+                                  marker:{lat, lng}
+                              })
+                            }
+                          );
+                        
+                    }}
+                        options={{
+                            types:["establishment"],
+                            componentRestrictions: { country: this.id }
+                        }
+                    }
                         />
                     <Form >
                    

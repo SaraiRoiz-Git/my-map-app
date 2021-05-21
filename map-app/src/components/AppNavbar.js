@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
 
 class AppNavbar extends React.Component {
@@ -18,7 +18,7 @@ class AppNavbar extends React.Component {
 
         return (
             <Navbar  className="mb-2" collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
-                <Navbar.Brand href="#setParameters">My world</Navbar.Brand>
+                <Navbar.Brand>My world</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -32,7 +32,7 @@ class AppNavbar extends React.Component {
                         {userName}
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>
+            </Navbar>                 
 
         )
 

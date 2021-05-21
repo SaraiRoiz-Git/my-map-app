@@ -1,6 +1,7 @@
 class CountryMap {
-    constructor(country, lat, lng, capital, date, subTitle, free) {
+    constructor(country,id, lat, lng, capital, date, subTitle, free) {
         this.country = country;
+        this.code = id;
         this.lat = lat;
         this.lng = lng;
         this.capital = capital

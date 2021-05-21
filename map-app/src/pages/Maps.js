@@ -50,6 +50,7 @@ class Maps extends React.Component {
                 <GoogleCharts
                     setParameters={this.setParameters}
                     data={ChosenCountries}
+                    places = {list}
                 >
                 </GoogleCharts>
             </div>

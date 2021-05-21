@@ -53,6 +53,7 @@ class HomePage extends React.Component {
         else if (data) {
             const map = new CountryMap(
                 this.state.country,
+                data.country_code,
                 data.latlng[0],
                 data.latlng[1],
                 data.capital,

@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
+import Marker from "./Marker";
 let google = window.google;
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 
 class GMap extends React.Component {
@@ -9,6 +9,9 @@ class GMap extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+
+    }
     onMapClick = (e) => {
         const geocoder = new google.maps.Geocoder();
         geocoder.geocode({ location: e }, (results, status) => {
@@ -35,23 +38,36 @@ class GMap extends React.Component {
         });
     }
 
-    render() {
+    createMarkers = (places) => {
 
+        return places.map((place) => {
+            console.log('place', place)
+            return (<Marker
+                lat={place.lat}
+                lng={place.lng}
+                text={place.title}
+                address={place.addres}
+                category={place.category}
+            >
+            </Marker>)
+        })
+    }
+
+    render() {
+        console.log(this.props.places)
+        const markers = this.createMarkers(this.props.places)
+        console.log('marker', markers)
         return (
             // Important! Always set the container height explicitly
             <div className="g-map">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8' }}
                     height={'100%'} width={'100%'}
-                    defaultCenter={this.props}
+                    defaultCenter={this.props.center}
                     defaultZoom={7}
                 // onClick={this.onMapClick}
                 >
-                    <AnyReactComponent
-                        lat={32.07549}
-                        lng={34.775485}
-                        text={'Zara'}
-                    />
+                    {markers}
                 </GoogleMapReact>
             </div>
         );

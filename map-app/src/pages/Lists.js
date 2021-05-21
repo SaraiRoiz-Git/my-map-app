@@ -51,9 +51,9 @@ class Lists extends React.Component {
                 </div>
                 <div className="google-map">
                     <GMap
-                        lat={this.latlng[0]}
-                        lng={this.latlng[1]}
-                    ></GMap>
+                        center={this.latlng}
+                        places = {this.props.list}
+                    ></GMap> 
                 </div>
             </Container>
 
