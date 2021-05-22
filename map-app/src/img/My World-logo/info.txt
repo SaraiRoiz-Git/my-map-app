@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Nexa_Free_Light
+font link: https://www.fontfabric.com/nexa-free-font/http://www.myfonts.com/fonts/facetype/publica-sans/regular/#index
+font author: Font Fabric
+font author site: http://www.fontfabric.com/
+
+
+icon designer: Ema Dimitrova
+icon designer link: /sesisesi
+        
+{"bg":"transparent","icon-gradient-0":"#006678","icon-gradient-1":"#4FA8FF","font":"#000000","slogan":"#141414"}
+      

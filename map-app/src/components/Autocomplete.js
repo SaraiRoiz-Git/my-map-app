@@ -1,5 +1,6 @@
 import React from "react";
-
+import ReactGoogleAutocomplete from "react-google-autocomplete";
+import Geocode from "react-geocode";
 
 class Autocomplete extends React.Component {
     constructor(props) {
@@ -10,34 +11,29 @@ class Autocomplete extends React.Component {
     render() {
 
         return (
-            <Container>
+            <div>
                 <ReactGoogleAutocomplete
                     apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
                     onPlaceSelected={(place) => {
-                        this.setState({
-                            "adress": place.formatted_address
-                        })
                         Geocode.setApiKey('AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8');
                         Geocode.fromAddress(place.formatted_address).then(
                             (response) => {
-                                console.log(response.results[0].geometry.location)
-                                const { lat, lng } = response.results[0].geometry.location;
-                                console.log(lat, lng);
-
+                                const { lat, lng } = (response ? response.results[0].geometry.location : "invalid");
                                 this.setState({
+                                    adress: place.formatted_address,
                                     marker: { lat, lng }
                                 })
+                                this.props.updateAdress(place.formatted_address, { lat, lng })
                             }
                         );
 
                     }}
                     options={{
-                        types: ["establishment"],
-                        componentRestrictions: { country: this.id }
-                    }
-                    }
+                        types: [["establishment"], ["address"], ["(region)"]],
+                        componentRestrictions: { country: this.props.id }
+                    }}
                 />
-            </Container>
+            </div>
 
         )
 

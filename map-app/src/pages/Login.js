@@ -63,7 +63,7 @@ class Login extends React.Component {
                             Submit
                     </Button>
                     </Form>
-                    <Link to="/signup">Sign In</Link>
+                    <Link to="/">Sign In</Link>
                 </div>
             </Container>
 

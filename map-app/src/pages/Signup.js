@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import logo from '../img/logo.svg';
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -18,47 +20,67 @@ class Signup extends React.Component {
             pwd: this.state.pwd
         }
         this.props.addUser(newUser)
-        window.location.href = "/#/";
+        window.location.href = "/#/home";
     }
 
 
     render() {
 
         return (
-            <div>
-                <Form>
-                    <Form.Group controlId="user name">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Add Name"
-                            onChange={(e) => this.setState({ name: e.target.value })} />
-                    </Form.Group>
+            <div className="sign-up">
 
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email"
-                            onChange={(e) => this.setState({ email: e.target.value })} />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+                <Col lg="5" md="6" sm="12">
+                    <Form className="sign-up-form">
+                        <div className="head">
+                            <div className="logo"><img src={logo} alt="Logo" /></div>
+                            <div className="sub-title">Your journey start here</div>
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password"
-                            onChange={(e) => this.setState({ pwd: e.target.value })} />
-                    </Form.Group>
+                        </div>
+                        <div className="start">Start to create your own trips by signup </div>
+                        <Form.Group controlId="user name">
 
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password confirm</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type="text" placeholder="Add Name"
+                                onChange={(e) => this.setState({ name: e.target.value })} />
+                        </Form.Group>
 
-                    <Form.Group controlId="formBasicCheckbox">
-                    </Form.Group>
-                    <Button variant="primary" type="button" onClick={this.createNewUser}>
-                        Signup
-                    </Button>
-                </Form>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email"
+                                onChange={(e) => this.setState({ email: e.target.value })} />
+                            <Form.Text className="text-muted">
+
+                            </Form.Text>
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password"
+                                onChange={(e) => this.setState({ pwd: e.target.value })} />
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password confirm</Form.Label>
+                            <Form.Control type="password" placeholder="Password" />
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicCheckbox">
+                        </Form.Group>
+                        <Form.Group controlId="formBasicPassword">
+                            <div>Alredy have acount? click <Link to="/login">Here</Link> </div>
+                           
+                        </Form.Group>
+
+                        <Col md={{ span: 6, offset:8 }}>
+                            <Button variant="info" type="button" onClick={this.createNewUser}>
+                                Signup
+                                 </Button>
+                        </Col>
+
+
+                    </Form>
+                </Col>
+
             </div>
         )
 

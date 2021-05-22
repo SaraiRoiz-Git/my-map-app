@@ -61,7 +61,7 @@ class HomePage extends React.Component {
                 moment().format("MMM Do YYYY"),
                 this.state.subTitle,
                 this.state.freeText)
-            this.props.addMap(map);
+            this.props.addMap("maps",map);
             window.location.href = '/#/maps'
 
         } else {

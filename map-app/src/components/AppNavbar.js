@@ -17,7 +17,7 @@ class AppNavbar extends React.Component {
         const userName = (this.props.user) ? <Nav.Link href="/#/login" >Hello {this.props.user.name}</Nav.Link> : null;
 
         return (
-            <Navbar  className="mb-2" collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Navbar.Brand>My world</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

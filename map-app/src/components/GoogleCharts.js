@@ -38,7 +38,6 @@ class GoogleCharts extends React.Component {
   render() {
 
     return (
-      // Important! Always set the container height explicitly
       <div className="g-map">
 
         <Chart className="mb-2"
@@ -48,7 +47,7 @@ class GoogleCharts extends React.Component {
           regionClick={this.onMapClick}
           options={{
 
-            backgroundColor: '1b4965',
+            backgroundColor: '127597',
             defaultColor: "bee9e8",
           }}
 

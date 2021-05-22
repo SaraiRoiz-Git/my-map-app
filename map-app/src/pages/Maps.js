@@ -9,16 +9,13 @@ class Maps extends React.Component {
     }
     componentDidMount() {
         checkUserValidity(this.props.user)
-
     }
 
     goTo = (id) => {
         window.location.href = `/#/list/${id}`
-
     }
 
     createlist = () => {
-
         return this.props.list.map((map) => {
             return <div onClick={() => { this.goTo(map.code) }}>
                 <h4>{map.country}</h4>
@@ -30,9 +27,7 @@ class Maps extends React.Component {
     }
 
     makeListOfChosenCountries = (list) => {
-        return (list.map((curr) => {
-            return [curr.country]
-        }))
+        return (list.map((curr) => [curr.country]))
     }
 
     setParameters = () => { }
@@ -40,10 +35,8 @@ class Maps extends React.Component {
         const list = this.createlist()
         const ChosenCountries = this.makeListOfChosenCountries(this.props.list)
 
-
         return (
             <div className="list-container">
-
                 <div>
                     {list}
                 </div>
@@ -51,8 +44,7 @@ class Maps extends React.Component {
                     setParameters={this.setParameters}
                     data={ChosenCountries}
                     places = {list}
-                >
-                </GoogleCharts>
+                />
             </div>
         )
 

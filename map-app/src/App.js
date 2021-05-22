@@ -49,24 +49,28 @@ class App extends React.Component {
   }
 
   // add new map to map list
-  addMap = (map) => {
+  addData = (key, value) => {
     this.setState({
-      maps: this.state.maps.concat(map)
+      [key]: this.state[key].concat(value)
+
     })
+    console.log(this.state.places)
   }
+
 
   render() {
     return (
       <HashRouter>
-
-        <AppNavbar
-          user={this.state.user}
-          logout={this.logout} />
+         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}> 
+          <AppNavbar exact
+            user={this.state.user}
+            logout={this.logout} />
+         </Route> 
 
         <Route exact path={'/home'}>
           <HomePage
             user={this.state.user}
-            addMap={this.addMap}
+            addMap={this.addData}
             maps={this.state.maps}
           ></HomePage>
         </Route>
@@ -77,7 +81,7 @@ class App extends React.Component {
             login={this.login}></Login>
         </Route>
 
-        <Route exact path={'/signup'}>
+        <Route exact path={'/'}>
           <Signup addUser={this.addUser}></Signup>
         </Route>
 
@@ -85,7 +89,6 @@ class App extends React.Component {
           <Maps
             user={this.state.user}
             list={this.state.maps}>
-
           </Maps>
         </Route>
 
@@ -97,8 +100,8 @@ class App extends React.Component {
         </Route>
         <Route exact path={'/edit-list/:id'}>
           <EditMapList
-            user={this.state.user}>
-
+            user={this.state.user}
+            addPlace={this.addData}>
           </EditMapList>
         </Route>
 

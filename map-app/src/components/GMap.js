@@ -41,7 +41,6 @@ class GMap extends React.Component {
     createMarkers = (places) => {
         if(places){
             return places.map((place) => {
-                console.log('place', place)
                 return (<Marker
                     lat={place.lat}
                     lng={place.lng}
@@ -57,9 +56,7 @@ class GMap extends React.Component {
     }
 
     render() {
-        console.log(this.props.places)
         const markers = this.createMarkers(this.props.places)
-        console.log('marker', markers)
         return (
             // Important! Always set the container height explicitly
             <div className="g-map">

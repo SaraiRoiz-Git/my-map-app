@@ -1,21 +1,12 @@
 class Pin {
-    constructor(capital, category, title, rate, address, currencies, freeText) {
-        this.code = capital;
+    constructor(code, category, title, rate, address, freeText,marker) {
+        this.code = code;
         this.category = category;
         this.title = title;
         this.rate = rate;
         this.address = address;
-        this.currencies = currencies;
-        this.freeText = freeText
-
-    }
-
-    render() {
-
-        return (
-            <div className="p-home">
-            </div>
-        )
+        this.freeText = freeText;
+        this.marker=marker
 
     }
 }
