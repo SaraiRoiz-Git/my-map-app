@@ -23,29 +23,29 @@ class Signup extends React.Component {
         window.location.href = "/#/home";
     }
 
-
     render() {
 
         return (
             <div className="sign-up">
+                <div className="test123"></div>
 
-                <Col lg="5" md="6" sm="12">
-                    <Form className="sign-up-form">
+                <Col lg="5" md="12" sm="12">
+                    <Form className="sign-form p-sign">
                         <div className="head">
                             <div className="logo"><img src={logo} alt="Logo" /></div>
                             <div className="sub-title">Your journey start here</div>
 
                         </div>
                         <div className="start">Start to create your own trips by signup </div>
-                        <Form.Group controlId="user name">
+                        <Form.Group>
 
-                            <Form.Label>Name</Form.Label>
+                            <Form.Label name="name">Name<div className="error"></div></Form.Label>
                             <Form.Control type="text" placeholder="Add Name"
                                 onChange={(e) => this.setState({ name: e.target.value })} />
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                        <Form.Group >
+                            <Form.Label name="email">Email address<div className="error"></div></Form.Label>
                             <Form.Control type="email" placeholder="Enter email"
                                 onChange={(e) => this.setState({ email: e.target.value })} />
                             <Form.Text className="text-muted">
@@ -53,25 +53,24 @@ class Signup extends React.Component {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
+                        <Form.Group >
+                            <Form.Label name="password">Password<div className="error"></div></Form.Label>
+                            <Form.Control type="password" placeholder="Password"
+                                onChange={(e) => this.setState({ pwd: e.target.value })} />
+                        </Form.Group>
+
+                        <Form.Group >
+                            <Form.Label name="password-confirm">Password confirm<div className="error"></div></Form.Label>
                             <Form.Control type="password" placeholder="Password"
                                 onChange={(e) => this.setState({ pwd: e.target.value })} />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password confirm</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicCheckbox">
-                        </Form.Group>
-                        <Form.Group controlId="formBasicPassword">
                             <div>Alredy have acount? click <Link to="/login">Here</Link> </div>
-                           
+
                         </Form.Group>
 
-                        <Col md={{ span: 6, offset:8 }}>
+                        <Col>
                             <Button variant="info" type="button" onClick={this.createNewUser}>
                                 Signup
                                  </Button>

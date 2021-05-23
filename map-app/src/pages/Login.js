@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import logo from '../img/logo.svg';
 
 class Login extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Login extends React.Component {
     updateEmail = (e) => {
         this.setState(
             {
-                email: e.target.value
+                email: e.target.value 
             }
         )
     }
@@ -44,7 +45,13 @@ class Login extends React.Component {
         return (
             <Container>
                 <div className="p-login">
-                    <Form className="mt-5">
+                    <Form className="mt-5 sign-form">
+                        <div className="head">
+                            <div className="logo"><img src={logo} alt="Logo" /></div>
+                            <div className="sub-title">Your journey start here</div>
+
+                        </div>
+                     
                         <Form.Group controlId="formBasicEmail" >
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" onChange={this.updateEmail} value={this.state.email} />
@@ -62,8 +69,13 @@ class Login extends React.Component {
                         <Button variant="primary" type="button" onClick={this.validateLogin}>
                             Submit
                     </Button>
+                        <div>
+                            Dont have acount yet? Sign
+                    <Link to="/signup"> here</Link>
+                        </div>
+
                     </Form>
-                    <Link to="/">Sign In</Link>
+
                 </div>
             </Container>
 

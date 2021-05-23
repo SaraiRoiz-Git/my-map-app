@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
 import { withRouter } from "react-router";
@@ -17,7 +15,8 @@ class EditMapList extends React.Component {
         }
     }
 
-    addToMap=()=> {
+    addToMap = () => {
+        console.log("state",this.state)
         const place = new Pin(
             this.id,
             this.state.category,
@@ -25,9 +24,11 @@ class EditMapList extends React.Component {
             this.state.importance,
             this.state.address,
             this.state.freeText,
+            this.state.marker.lat,
+            this.state.marker.lng,
             this.state.marker)
         this.props.addPlace("places", place)
-        
+
         window.location.href = `/#/list/${this.id}`
     }
 
@@ -37,15 +38,15 @@ class EditMapList extends React.Component {
         })
     }
 
-    updateAdress = (adress, marker) => {
+    updateAdress = (address, marker) => {
         this.setState({
-            adress: adress,
+
+            address: address,
             marker: marker
         })
     }
 
     render() {
-        console.log(this.state)
         return (
 
             <Container className="edit">

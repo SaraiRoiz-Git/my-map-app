@@ -1,22 +1,12 @@
-
-
 .App {
+  
   text-align: center;
 }
 
-/* .p-home{
-  background: url('C:\\sarai\\react projects\\final project\\my-world\\src\\img\\home.jpg') no-repeat center center fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 1000px;
-
-} */
-
-/* .screen{
-  display: flex;
-} */
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
 
 
 #map {
@@ -29,6 +19,8 @@ html, body {
 }
 
 .g-map{
+  display: flex;
+  justify-content: center;
   height: 75vh;
   width: 80%; 
   margin: auto;
@@ -68,19 +60,25 @@ Cart{
     width: 100vw;
     height: 100vh;
     background-size: cover;
- background-repeat: no-repeat;
-  position: fixed; 
+    background-repeat: no-repeat;
+    position: sticky; 
   }
 
-  .sign-up-form{
+  .sign-form{
   
     background-color:rgba(255,255, 255, 0.6);
-    margin: 5% 30% 10% 0 ;
+    /* margin: 5% 30% 10% 0 ; */
     -webkit-box-shadow: -3px -2px 8px -2px rgba(0,0,0,0.87); 
     box-shadow: -3px -2px 8px -2px rgba(0,0,0,0.50);
     padding: 40px ;
     border-radius: 5px;
+    /* height: 100vh; */
   }
+
+  .p-sign{
+       margin: 5vh 30% 10% 0 ; 
+  }
+
 
   .head{
     text-align: center;
@@ -111,4 +109,42 @@ Cart{
 
   button{
     margin: 0;
+  }
+
+  @media screen and (max-width: 760px) {
+    
+    .p-sign{
+      margin: 0 ; 
+ }
+    .sign-up{
+      position: unset;
+    }
+  }
+
+  .date{
+    font-size: 12px;
+  }
+
+  .list-container{
+    height: 100vh;
+    background-color: #127597;
+    
+  }
+
+  .chart-map{
+    margin: auto;
+  }
+
+  .map-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-height: 680px) {
+    .p-sign{
+      overflow-y: scroll;
+      height: 90vh;
+    }
   }

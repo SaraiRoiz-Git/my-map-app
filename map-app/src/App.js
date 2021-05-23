@@ -54,7 +54,6 @@ class App extends React.Component {
       [key]: this.state[key].concat(value)
 
     })
-    console.log(this.state.places)
   }
 
 
