@@ -8,10 +8,10 @@ class Marker extends React.Component {
     render() {
         return (
 
-            <div className={this.props.category} className="marker">
+            <div className="marker">
                 <div className="marker-info">{this.props.text}</div>
                 <div className="marker-info">{this.props.addess}</div>
-                <div className="marker-color"></div>
+                <div className={["marker-color", this.props.category]}></div>
             </div>
         )
     }

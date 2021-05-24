@@ -1,52 +1,62 @@
 [
     {
+        "id": "89371fdf-b6c1-498f-9c0d-869f5c01e0f1",
         "code": "IL",
         "category": "shopping",
         "title": "Zara",
         "rate": "1",
-        "freeText": "free text will be here",
+        "freeText": "We use first-party and third-party cookies for analytical purposes and to show you advertising related to your preferences, based on your browsing habits and profile. For more information, please",
         "map": "",
         "lat": 32.07549,
-        "lng": 34.775485
+        "lng": 34.775485,
+        "address": "Zara Dizengoff Center, Dizengoff Street, Tel Aviv-Yafo, Israel"
     },
     {
+        "id": "89371fdf-b6c1-498f-9c0d-869f5c01e0f2",
         "code": "IL",
         "category": "shopping",
         "title": "H&M",
         "rate": "3",
-        "freeText": "free text will be here",
+        "freeText": "We use first-party and third-party cookies for analytical purposes and to show you advertising related to your preferences, ",
         "map": "",
         "lat": 31.75211,
-        "lng": 35.18755
+        "lng": 35.18755,
+        "address": "Zara Dizengoff Center, Dizengoff Street, Tel Aviv-Yafo, Israel"
     },
     {
-        "code": "ES",
+        "id": "89371fdf-b6c1-498f-9c0d-869f5c01e0f3",
+        "code": "IL",
         "category": "shopping",
         "title": "My Jungle",
         "rate": "1",
-        "freeText": "free text will be here",
+        "freeText": "We use first-party and third-party cookies for analytical purposes and to show you advertising related to your preferences, ",
         "map": "",
         "lat": 32078706,
-        "lng": 35.01273
+        "lng": 35.01273,
+        "address": "Zara Dizengoff Center, Dizengoff Street, Tel Aviv-Yafo, Israel"
     },
     {
+        "id": "89371fdf-b6c1-498f-9c0d-869f5c01e0f4",
         "code": "IL",
         "category": "hotels",
         "title": "isrotel",
         "rate": "2",
-        "freeText": "my booked hotel",
+        "freeText": "We use first-party and third-party cookies for analytical purposes and to show you advertising related to your preferences, ",
         "map": "",
         "lat": 29.51341,
-        "lng": 34.92355
+        "lng": 34.92355,
+        "address": "Isrotel Yam Suf, Eilat, Israel"
     },
     {
-        "code": "ES",
+        "id": "89371fdf-b6c1-498f-9c0d-869f5c01e0f5",
+        "code": "IL",
         "category": "food",
         "title": "Magazino",
         "rate": "3",
-        "freeText": "free text will be here",
+        "freeText": "We use first-party and third-party cookies for analytical purposes and to show you advertising related to your preferences, ",
         "map": "",
         "lat": 32.06380,
-        "lng": 34.7796
+        "lng": 34.7796,
+        "address": "Magazzino, Derech Menachem Begin, Tel Aviv-Yafo, Israel"
     }
 ]

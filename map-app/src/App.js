@@ -60,11 +60,11 @@ class App extends React.Component {
   render() {
     return (
       <HashRouter>
-         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}> 
+        <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}>
           <AppNavbar exact
             user={this.state.user}
             logout={this.logout} />
-         </Route> 
+        </Route>
 
         <Route exact path={'/home'}>
           <HomePage
@@ -94,17 +94,13 @@ class App extends React.Component {
         <Route exact path={'/list/:id'}>
           <Lists
             user={this.state.user}
-            list={this.state.places}>
-          </Lists>
-        </Route>
-        <Route exact path={'/edit-list/:id'}>
-          <EditMapList
-            user={this.state.user}
+            list={this.state.places}
             addPlace={this.addData}>
-          </EditMapList>
+          </Lists>
         </Route>
 
       </HashRouter>
+
     );
   }
 }

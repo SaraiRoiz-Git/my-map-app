@@ -16,7 +16,6 @@ class EditMapList extends React.Component {
     }
 
     addToMap = () => {
-        console.log("state",this.state)
         const place = new Pin(
             this.id,
             this.state.category,
@@ -72,7 +71,7 @@ class EditMapList extends React.Component {
                                     value={this.state.category} custom>
                                     <option value="selectCategory">Select Category</option>
                                     <option value="hotels">hotels</option>
-                                    <option value="market place">Market Place</option>
+                                    <option value="market-place">Market Place</option>
                                     <option value="restaurnts">Restaurnts</option>
                                     <option value="sites">Sites</option>
                                     <option value="shopping">Shopping</option>

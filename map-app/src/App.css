@@ -68,11 +68,14 @@
   width: 100%;
 }
 
+.gmap-container{
+  padding: 0;
+}
 .g-map{
   display: flex;
   justify-content: center;
-  height: 75vh;
-  width: 80%; 
+  height: 100%;
+  width: 100%; 
   margin: auto;
   margin-bottom: 10px;
 }
@@ -80,8 +83,38 @@
 .marker-color{
   width: 20px;
   height: 30px;
-  background: url(".\\img\\7.svg") ;
+  background: url(".\\img\\1.svg") ; 
   background-size: cover;
+}
+
+.hotels{
+  background: url(".\\img\\hotels.svg") ;
+}
+
+.market-place{
+  background: url(".\\img\\market-place.svg") ;
+}
+.restaurnts{
+  background: url(".\\img\\restaurnts.svg") ;
+}
+.sites{
+  background: url(".\\img\\hotels.svg") ;
+}
+.hotels{
+  background: url(".\\img\\sites.svg") ;
+}
+
+.shopping{
+  background: url(".\\img\\shopping.svg") ;
+}
+
+.transportation{
+  background: url(".\\img\\transportation.svg") ;
+}
+
+.list-group-item{
+  
+  border: 1px rgb(225,227,228) solid !important; 
 }
 
 .p-maps{
@@ -94,6 +127,7 @@
   
 }
 .list{
+  overflow: scroll;
   height: 100vh;
 }
 
@@ -103,6 +137,7 @@
  
 }
 
+
 .title{
   font-size: 1.5rem;
   font-weight: 500;
@@ -111,13 +146,45 @@
 .search{
   padding: 30px;
 }
+
+.pac-container {
+  z-index: 9999 !important;
+  width: 94%;
+  margin-bottom: 15px;
+}
+
+
+.pac-target-input{
+  display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-check{
+  margin-bottom: 10px;
+}
+
+.add-to-list{
+  padding-top: 60px;
+}
+
 @media screen and (max-height: 680px) {
   .p-sign{
     overflow-y: scroll;
     height: 90vh;
   }
   .map-container{
-    height:auto;
+    margin:auto;
   }
   .p-maps{
     position:unset;
@@ -130,11 +197,9 @@
   }
 
   .date{
-    font-size: 12px;
+    font-size: 12px !important;
   }
-  .pac-target-input{
-  z-index: 10000 !important;
   
-}
+  
 }
 

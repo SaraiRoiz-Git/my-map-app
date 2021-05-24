@@ -41,7 +41,6 @@ class GMap extends React.Component {
     createMarkers = (places) => {
         if (places) {
             return places.map((place) => {
-                console.log( 'place',place)
                 return (<Marker
                     lat={place.lat}
                     lng={place.lng}
@@ -55,7 +54,6 @@ class GMap extends React.Component {
     }
 
     render() {
-        console.log('places',this.props.places)
         const markers = this.createMarkers(this.props.places)
         return (
             <div className="g-map">
@@ -64,7 +62,7 @@ class GMap extends React.Component {
                     height={'100%'} width={'100%'}
                     defaultCenter={this.props.center}
                     defaultZoom={7}
-                    onClick={this.onMapClick}
+                    // onClick={this.onMapClick}
                 >
                     {markers}
                 </GoogleMapReact>

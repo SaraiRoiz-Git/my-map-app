@@ -1,5 +1,7 @@
+import { v4 as uuidv4 } from 'uuid'
+
 class Pin {
-    constructor(code, category, title, rate, address, freeText,lat,lng,marker) {
+    constructor(code, category, title, rate, address, freeText,lat,lng) {
         this.code = code;
         this.category = category;
         this.title = title;
@@ -8,8 +10,7 @@ class Pin {
         this.freeText = freeText;
         this.lat=lat;
         this.lng = lng;
-        this.marker=marker
-
+        this.id = uuidv4();
     }
 }
 

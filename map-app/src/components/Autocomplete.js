@@ -11,8 +11,8 @@ class Autocomplete extends React.Component {
     render() {
 
         return (
-            <div>
-                <ReactGoogleAutocomplete style={{ zIndex: "10000" }}
+            <div className="pac-container">
+                <ReactGoogleAutocomplete 
                     apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
                     onPlaceSelected={(place) => {
                         Geocode.setApiKey('AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8');

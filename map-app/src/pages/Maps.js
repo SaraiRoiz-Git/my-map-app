@@ -57,7 +57,7 @@ class Maps extends React.Component {
                         </Card>
                     </Col>
                     <Col sm="12" md="9" lg="10" className="map-container">
-                            <GoogleCharts className="chart-map my-auto"
+                            <GoogleCharts className="my-auto"
                                 setParameters={this.setParameters}
                                 data={ChosenCountries}
                             />
