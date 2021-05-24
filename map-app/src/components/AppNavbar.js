@@ -1,5 +1,6 @@
  import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
+import logoNav from '../img/logoNav.svg';
 
 class AppNavbar extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class AppNavbar extends React.Component {
 
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
-                <Navbar.Brand>My world</Navbar.Brand>
+                <Navbar.Brand className="logo-nav"><img src={logoNav} alt="Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">

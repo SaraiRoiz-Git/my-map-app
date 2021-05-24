@@ -1,6 +1,6 @@
 import React from "react";
 import { checkUserValidity } from "../utility";
-import { Button, Col, Container, Form } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Card } from 'react-bootstrap';
 import countries from '../data/countries.json'
 import SearchBox from "../components/SearchBox";
 import moment from 'moment';
@@ -61,7 +61,7 @@ class HomePage extends React.Component {
                 moment().format("MMM Do YYYY"),
                 this.state.subTitle,
                 this.state.freeText)
-            this.props.addMap("maps",map);
+            this.props.addMap("maps", map);
             window.location.href = '/#/maps'
 
         } else {
@@ -93,64 +93,65 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <Container className="screen">
-                <div>
-                    <GoogleCharts
-                        setParameters={this.setParameters}
-                        data={allCountries}
-                    >
-                    </GoogleCharts>
-                </div>
-                <div className="p-create-map">
-                    <div className="countries">
-                        <Col lg="4" md="6" sm="12">
-                            <SearchBox
-                                search={this.state.input}
-                                placeHolder={'Choose a country'}
-                                result={this.state.filteredList}
-                                onSearchChanged={this.searchTextChanged}
-                                onResultSelected={this.chooseACountry}>
-                            </SearchBox>
-                            <div>{this.state.error}</div>
-                        </Col>
+            <Container fluid className="screen p-maps">
+                <Row>
 
-                    </div>
-                    <div>
-                        <h4>{this.state.country}</h4>
-                        {/* <CountryData
+
+
+                    <Col className="list-bar" sm="12" md="4" lg="3">
+                        <Card className="list ">
+                            <Card.Header >Start to explor:</Card.Header>
+                            <Card.Text className="search">
+                                <SearchBox
+                                    search={this.state.input}
+                                    placeHolder={'Choose a country'}
+                                    result={this.state.filteredList}
+                                    onSearchChanged={this.searchTextChanged}
+                                    onResultSelected={this.chooseACountry}>
+                                </SearchBox>
+                                <div>{this.state.error}</div>
+
+                                <div>
+                                    <h4>{this.state.country}</h4>
+                                    {/* <CountryData
                             country={this.state.country}>
                         </CountryData> */}
-                    </div>
-                    <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
-                    <Col lg="4" md="6" sm="12">
-                        <Form >
-                            <Form.Group>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Add your own sub title"
-                                    onChange={this.updateSubTitle}
-                                    value={this.state.subTitle} />
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Control
-                                    as="textarea"
-                                    rows={3}
-                                    placeholder="Add Free text"
-                                    onChange={this.updateFreeText}
-                                    value={this.state.freeText} />
-                            </Form.Group>
-                            <Button type="button"
-                                variant="info"
-                                onClick={this.addMap}
-                            //disabled
-                            >
-                                Create Map
+                                </div>
+                                <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
+                                <Form >
+                                    <Form.Group>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Add your own sub title"
+                                            onChange={this.updateSubTitle}
+                                            value={this.state.subTitle} />
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Control
+                                            as="textarea"
+                                            rows={3}
+                                            placeholder="Add Free text"
+                                            onChange={this.updateFreeText}
+                                            value={this.state.freeText} />
+                                    </Form.Group>
+                                    <Button type="button"
+                                        variant="info"
+                                        onClick={this.addMap}
+                                    //disabled
+                                    >
+                                        Create Map
                             </Button>
-                        </Form>
+                                </Form>
+                            </Card.Text>
+                        </Card>
                     </Col>
-                </div>
-                <div >
-                </div>
+                    <Col sm="12" md="8" lg="9" className="map-container"> 
+                        <GoogleCharts 
+                            setParameters={this.setParameters}
+                            data={allCountries}
+                        />
+                    </Col>
+                </Row>
             </Container >
         )
     }

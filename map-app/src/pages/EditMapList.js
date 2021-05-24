@@ -49,7 +49,7 @@ class EditMapList extends React.Component {
     render() {
         return (
 
-            <Container className="edit">
+            <Container fluid className="edit">
 
                 <div className="p-edit-list">
                     <Col>

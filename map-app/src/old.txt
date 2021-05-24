@@ -1,0 +1,145 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+#map {
+  height: 100%;
+}
+
+.g-map{
+  display: flex;
+  justify-content: center;
+  height: 75vh;
+  width: 80%; 
+  margin: auto;
+  margin-bottom: 10px;
+}
+.google-map{
+  width: 100%;
+}
+.edit{
+  width: 100%;
+  display: flex;
+}
+
+GoogleCharts{
+  margin-top: 100px;
+}
+Cart{
+  margin: auto;
+}
+
+
+.list-container{
+  display: flex;
+}
+
+.marker-color{
+  width: 20px;
+  height: 30px;
+  background: url(".\\img\\7.svg") ;
+  background-size: cover;
+}
+
+  .sign-up{
+    display: flex;
+    flex-direction: row-reverse;
+    background: url(".\\img\\woman.jpeg")  no-repeat center center fixed;;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky; 
+    overflow: hidden;
+  }
+
+  .sign-form{
+  
+    background-color:rgba(255,255, 255, 0.6);
+    /* margin: 5% 30% 10% 0 ; */
+    -webkit-box-shadow: -3px -2px 8px -2px rgba(0,0,0,0.87); 
+    box-shadow: -3px -2px 8px -2px rgba(0,0,0,0.50);
+    padding: 40px ;
+    border-radius: 5px;
+    /* height: 100vh; */
+  }
+
+  .p-sign{
+       margin: 5vh 30% 10% 0 ; 
+  }
+
+
+  .head{
+    text-align: center;
+  }
+
+  .logo{
+    margin: auto;
+    width: 68%;
+  }
+  
+  .btn{
+    background-color: rgb(18,117,151);
+  }
+
+  .sub-title{
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    font-weight: 200;
+  }
+
+  .start{
+    font-size: 1.2rem;
+    margin: 10px auto ;
+    letter-spacing: -0.05rem;
+    font-weight: 400;
+  }
+
+  button{
+    margin: 0;
+  }
+
+  .col-lg-5{
+    padding: 0;
+  }
+
+  @media screen and (max-width: 760px) {
+    
+    .p-sign{
+      margin: 0 ; 
+ }
+    .sign-up{
+      position: unset;
+    }
+  }
+
+  .date{
+    font-size: 12px;
+  }
+
+  .list-container{
+    height: 100vh;
+    background-color: #127597;
+    
+  }
+
+  .chart-map{
+    margin: auto;
+  }
+
+  .map-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-height: 680px) {
+    .p-sign{
+      overflow-y: scroll;
+      height: 90vh;
+    }
+  }

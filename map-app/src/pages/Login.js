@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.svg';
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
     updateEmail = (e) => {
         this.setState(
             {
-                email: e.target.value 
+                email: e.target.value
             }
         )
     }
@@ -35,7 +35,7 @@ class Login extends React.Component {
 
         if (validUser) {
             this.props.login(validUser)
-            window.location.href = "/#/"
+            window.location.href = "/#/home"
         } else {
             alert("user or password incorect")
         }
@@ -43,40 +43,38 @@ class Login extends React.Component {
     render() {
 
         return (
-            <Container>
-                <div className="p-login">
-                    <Form className="mt-5 sign-form">
-                        <div className="head">
-                            <div className="logo"><img src={logo} alt="Logo" /></div>
-                            <div className="sub-title">Your journey start here</div>
+            <Container fluid className="p-login" >
+                <Row className="login-container">
+                    <Col className="my-auto" lg={{ span: 4, offset: 4 }} sm="12">
+                        <Form className="sign-form">
+                            <div className="head">
+                                <div className="logo"><img src={logo} alt="Logo" /></div>
+                                <div className="sub-title">Your journey start here</div>
 
-                        </div>
-                     
-                        <Form.Group controlId="formBasicEmail" >
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" onChange={this.updateEmail} value={this.state.email} />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                             </Form.Text>
-                        </Form.Group>
+                            </div>
 
-                        <Form.Group controlId="formBasicPassword" >
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" onChange={this.updatePassword} value={this.state.pwd} />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                        </Form.Group>
-                        <Button variant="primary" type="button" onClick={this.validateLogin}>
-                            Submit
-                    </Button>
-                        <div>
-                            Dont have acount yet? Sign
-                    <Link to="/signup"> here</Link>
-                        </div>
+                            <Form.Group>
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" onChange={this.updateEmail} value={this.state.email} />
+                            </Form.Group>
 
-                    </Form>
+                            <Form.Group  >
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" onChange={this.updatePassword} value={this.state.pwd} />
+                            </Form.Group>
+                            <Form.Group >
+                                Dont have acount yet? Sign
+                                <Link to="/"> here</Link>
+                            </Form.Group>
 
-                </div>
+                            <Button variant="info" type="button" sm={{ offset: 8 }} onClick={this.validateLogin}>
+                                Submit
+                            </Button >
+                        </Form>
+                    </Col>
+
+
+                </Row>
             </Container>
 
         )

@@ -20,7 +20,7 @@ class GoogleCharts extends React.Component {
     let selectedId;
     try {
       selectedId = e.chartWrapper.getChart().getSelection();
-      
+
 
     }
     catch (e) {
@@ -43,10 +43,9 @@ class GoogleCharts extends React.Component {
         <Chart className="mb-2"
           chartType="GeoChart"
           mapsApiKey="AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8"
-          height={'100%'} width={'1000px'}
+           width={'100%'}
           regionClick={this.onMapClick}
           options={{
-
             backgroundColor: '127597',
             defaultColor: "bee9e8",
           }}

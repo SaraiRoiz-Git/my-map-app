@@ -1,15 +1,20 @@
-  
 [
     {
-        "id":1,
+        "id": 1,
         "name": "John doe",
         "email": "skarlinski@gmail.com",
         "pwd": "123"
     },
     {
-        "id":2,
+        "id": 1,
+        "name": "sarai",
+        "email": "sr.roiz@gmail.com",
+        "pwd": "pwd"
+    },
+    {
+        "id": 2,
         "name": "sara doe",
         "email": "sara@gmail.com",
         "pwd": "abc"
     }
-] 
+]

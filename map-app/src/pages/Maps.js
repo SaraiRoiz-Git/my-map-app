@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Card, Col,Row, Container, ListGroup } from "react-bootstrap";
 import GoogleCharts from "../components/GoogleCharts";
 import { checkUserValidity } from "../utility";
 
@@ -16,24 +16,13 @@ class Maps extends React.Component {
         window.location.href = `/#/list/${id}`
     }
 
-    // createlist = () => {
-    //     return this.props.list.map((map) => {
-    //         return <div onClick={() => { this.goTo(map.code) }}>
-    //             <h4>{map.country}</h4>
-    //             <div>{map.date}</div>
-    //             <div>{map.subTitle}</div>
-    //             <div>{map.free}</div>
-    //         </div>
-    //     })
-    // }
-
     createlist = () => {
         return this.props.list.map((map) => {
             return (<ListGroup.Item onClick={() => { this.goTo(map.code) }}>
                 <Card.Title>
-                    {map.country}   
+                    {map.country}
                     <span>            </span>
-                        <span className="date">
+                    <span className="date">
                         {map.date}
                     </span>
                 </Card.Title>
@@ -57,22 +46,27 @@ class Maps extends React.Component {
         const ChosenCountries = this.makeListOfChosenCountries(this.props.list)
 
         return (
-            <div className="list-container">
-                <Card style={{ width: '18rem' }}>
-                    <Card.Header>My World Maps</Card.Header>
-                    <ListGroup variant="flush">
-                        {list}
-                    </ListGroup>
-                </Card>
-                <div className="map-container">
-                <GoogleCharts className="chart-map"
-                    setParameters={this.setParameters}
-                    data={ChosenCountries}
-                    places={list}
-                />
-                </div>
-                
-            </div>
+            <Container fluid className="p-maps">
+                <Row>
+                    <Col className="list-bar" sm="12" md="3" lg="2">
+                        <Card className="list">
+                            <Card.Header className="title">My World Maps</Card.Header>
+                            <ListGroup variant="flush">
+                                {list}
+                            </ListGroup>
+                        </Card>
+                    </Col>
+                    <Col sm="12" md="9" lg="10" className="map-container">
+                            <GoogleCharts className="chart-map my-auto"
+                                setParameters={this.setParameters}
+                                data={ChosenCountries}
+                            />
+                    </Col>
+                </Row>
+            </Container>
+
+
+
         )
 
     }
