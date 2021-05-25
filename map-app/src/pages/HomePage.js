@@ -62,7 +62,7 @@ class HomePage extends React.Component {
                 this.state.subTitle,
                 this.state.freeText)
             this.props.addMap("maps", map);
-            window.location.href = '/#/maps'
+            window.location.href = '#/maps'
 
         } else {
             this.setState({
@@ -142,8 +142,8 @@ class HomePage extends React.Component {
                             </Card.Text>
                         </Card>
                     </Col>
-                    <Col sm="12" md="8" lg="9" className="map-container"> 
-                        <GoogleCharts 
+                    <Col sm="12" md="8" lg="9" className="map-container">
+                        <GoogleCharts
                             setParameters={this.setParameters}
                             data={allCountries}
                         />

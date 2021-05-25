@@ -35,7 +35,7 @@ class Login extends React.Component {
 
         if (validUser) {
             this.props.login(validUser)
-            window.location.href = "/#/home"
+            window.location.href = "#/home"
         } else {
             alert("user or password incorect")
         }

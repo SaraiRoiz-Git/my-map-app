@@ -28,7 +28,7 @@ class EditMapList extends React.Component {
             this.state.marker)
         this.props.addPlace("places", place)
 
-        window.location.href = `/#/list/${this.id}`
+        window.location.href = `#/list/${this.id}`
     }
 
     changeImportance = (e) => {

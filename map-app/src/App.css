@@ -143,6 +143,7 @@
 
 .p-lists{
   height: 100vh;
+  overflow:scroll;
 }
 .p-maps{
   margin: auto;

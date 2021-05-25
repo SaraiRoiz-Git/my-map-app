@@ -23,7 +23,7 @@ class Lists extends React.Component {
     }
 
     goTo = () => {
-        window.location.href = `/#/edit-list/${this.id}`
+        window.location.href = `#/edit-list/${this.id}`
 
     }
 

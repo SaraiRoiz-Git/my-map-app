@@ -2,7 +2,7 @@ import countries from './data/countries.json'
 
 export const checkUserValidity = (user) => {
     if (!user) {
-        window.location.href = '/#/'
+        window.location.href = '#/'
     }
 }
 

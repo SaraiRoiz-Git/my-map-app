@@ -20,7 +20,7 @@ class Signup extends React.Component {
             pwd: this.state.pwd
         }
         this.props.addUser(newUser)
-        window.location.href = "/#/home";
+        window.location.href = "#/home";
     }
 
     render() {

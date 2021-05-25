@@ -13,7 +13,7 @@ class Maps extends React.Component {
     }
 
     goTo = (id) => {
-        window.location.href = `/#/list/${id}`
+        window.location.href = `#/list/${id}`
     }
 
     createlist = () => {
