@@ -10,7 +10,7 @@ class Marker extends React.Component {
 
             <div className="marker">
                 <div className="marker-info">{this.props.text}</div>
-                <div className={`market-place ${this.props.category}`}></div>
+                <div className={`marker-place ${this.props.category}`}></div>
             </div>
         )
     }
