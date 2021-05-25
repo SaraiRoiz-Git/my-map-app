@@ -16,10 +16,6 @@ class Lists extends React.Component {
             isModalOpen: false,
             isMiniModalOpen: false,
         }
-
-    }
-    componentDidMount() {
-        checkUserValidity(this.props.user)
     }
 
     goTo = () => {
@@ -126,6 +122,7 @@ class Lists extends React.Component {
         }
     }
     render() {
+        checkUserValidity(this.props.user)
         const list = this.createlist();
         const modalItem = this.checkValidity();
         return (

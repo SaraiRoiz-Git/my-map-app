@@ -17,11 +17,7 @@ class HomePage extends React.Component {
             input: '',
             country: '',
             filteredList: ''
-
         }
-    }
-    componentDidMount() {
-        checkUserValidity(this.props.user)
     }
     // filter countries by input
     searchTextChanged = (filter) => {
@@ -92,6 +88,7 @@ class HomePage extends React.Component {
     }
 
     render() {
+        checkUserValidity(this.props.user)
         return (
             <Container fluid className="screen p-maps">
                 <Row cla>
@@ -106,7 +103,7 @@ class HomePage extends React.Component {
                                     onSearchChanged={this.searchTextChanged}
                                     onResultSelected={this.chooseACountry}>
                                 </SearchBox>
-                                <div>{this.state.error}</div>
+                                <div className="error">{this.state.error}</div>
 
                                 <div>
                                     <h4>{this.state.country}</h4>

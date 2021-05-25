@@ -8,9 +8,6 @@ class Maps extends React.Component {
         super(props);
 
     }
-    componentDidMount() {
-        checkUserValidity(this.props.user)
-    }
 
     goTo = (id) => {
         window.location.href = `#/list/${id}`
@@ -42,6 +39,7 @@ class Maps extends React.Component {
 
     setParameters = () => { }
     render() {
+        checkUserValidity(this.props.user)
         const list = this.createlist()
         const ChosenCountries = this.makeListOfChosenCountries(this.props.list)
 
@@ -64,9 +62,6 @@ class Maps extends React.Component {
                     </Col>
                 </Row>
             </Container>
-
-
-
         )
 
     }

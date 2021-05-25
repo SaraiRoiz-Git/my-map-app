@@ -33,6 +33,7 @@ class App extends React.Component {
     this.setState({
       user: null
     })
+
   }
   // update the user on the app
   login = (userObj) => {
@@ -54,6 +55,7 @@ class App extends React.Component {
       [key]: this.state[key].concat(value)
 
     })
+
   }
 
 
@@ -81,7 +83,9 @@ class App extends React.Component {
         </Route>
 
         <Route exact path={'/'}>
-          <Signup addUser={this.addUser}></Signup>
+          <Signup addUser={this.addUser}
+            user={this.state.user}>
+          </Signup>
         </Route>
 
         <Route exact path={'/maps'}>

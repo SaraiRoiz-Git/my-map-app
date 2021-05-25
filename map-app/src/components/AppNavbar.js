@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
 import logoNav from '../img/logoNav.svg';
 
@@ -33,7 +33,7 @@ class AppNavbar extends React.Component {
                         {userName}
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>
+            </Navbar>                 
 
         )
 
