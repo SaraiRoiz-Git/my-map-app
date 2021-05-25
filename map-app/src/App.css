@@ -81,35 +81,47 @@
 }
 
 .marker-color{
-  width: 20px;
-  height: 30px;
+  width: 30px;
+  height: 45px;
   background: url(".\\img\\1.svg") ; 
   background-size: cover;
 }
 
-.hotels{
+.hotels{width: 30px;
   background: url(".\\img\\hotels.svg") ;
+  background-size: cover;
 }
 
-.market-place{
-  background: url(".\\img\\market-place.svg") ;
-}
+
 .restaurnts{
   background: url(".\\img\\restaurnts.svg") ;
 }
 .sites{
-  background: url(".\\img\\hotels.svg") ;
+  background: url(".\\img\\sites.svg") ;
 }
 .hotels{
-  background: url(".\\img\\sites.svg") ;
+  background: url(".\\img\\hotels.svg") ;
+
 }
 
 .shopping{
-  background: url(".\\img\\shopping.svg") ;
+  background: url(".\\img\\shopping.svg");
 }
 
 .transportation{
   background: url(".\\img\\transportation.svg") ;
+}
+
+.market-place{
+  width: 30px;
+  height: 45px;
+  background-size: cover;
+}
+
+.market-place:hover{
+  width: 40px;
+  height: 60px;
+  z-index: 9999 !important;
 }
 
 .list-group-item{
@@ -117,26 +129,31 @@
   border: 1px rgb(225,227,228) solid !important; 
 }
 
+.p-lists{
+  height: 100vh;
+}
 .p-maps{
   margin: auto;
-  height: 100%;
-  overflow: hidden;
+  height: 100vH;
 }
 .list-bar{
   padding: 0;
   
 }
-.list{
-  overflow: scroll;
+/* .list{
   height: 100vh;
-}
+} */
 
 .map-container{
-/* height: 100vh; */
+height: 100vh; 
   background-color: #127597;
  
 }
 
+g{
+  height: 100%;
+  width: 100%;
+}
 
 .title{
   font-size: 1.5rem;
@@ -177,7 +194,13 @@
 .add-to-list{
   padding-top: 60px;
 }
+ .marker-info{
+  display: none;
+ }
 
+ .marker-info:hover{
+  display: block;
+ }
 @media screen and (max-height: 680px) {
   .p-sign{
     overflow-y: scroll;
@@ -203,3 +226,21 @@
   
 }
 
+@media screen and (max-width: 640px){
+
+  .row{
+    flex-wrap: wrap-reverse;
+  }
+
+  .map-container{
+    height: auto; 
+  }
+
+  .gmap-container{
+    height: 500px;
+  }
+
+  .p-maps{
+    overflow:visible;
+  }
+}

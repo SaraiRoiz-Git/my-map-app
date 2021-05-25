@@ -94,7 +94,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <Container fluid className="screen p-maps">
-                <Row>
+                <Row cla>
                     <Col className="list-bar" sm="12" md="4" lg="3">
                         <Card className="list ">
                             <Card.Header >Start to explor:</Card.Header>

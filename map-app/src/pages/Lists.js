@@ -132,8 +132,8 @@ class Lists extends React.Component {
         
             <Container fluid className="p-maps screen">
                     {this.showItem()}
-                <Row>
-                    <Col className="list-bar" sm="12" md="2" lg="2">
+                <Row >
+                    <Col className="list-bar" sm="12" md="3" lg="3">
                         <Card className="list ">
                         <div className="p-lists">
                         <Card.Header>
@@ -150,7 +150,7 @@ class Lists extends React.Component {
                             </div>
                         </Card>
                     </Col>
-                    <Col sm="12" md="10" lg="10" className="gmap-container">           
+                    <Col sm="12" md="9" lg="9" className="gmap-container">           
                             <GMap className="map-container my-auto"
                                 center={this.latlng}
                                 places={this.props.list}
