@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/my-map-app/static/css/main.3b0617ff.chunk.css",
-    "main.js": "/my-map-app/static/js/main.4fa73d93.chunk.js",
-    "main.js.map": "/my-map-app/static/js/main.4fa73d93.chunk.js.map",
+    "main.css": "/my-map-app/static/css/main.7ada1ead.chunk.css",
+    "main.js": "/my-map-app/static/js/main.98d0c6db.chunk.js",
+    "main.js.map": "/my-map-app/static/js/main.98d0c6db.chunk.js.map",
     "runtime-main.js": "/my-map-app/static/js/runtime-main.2a8cce21.js",
     "runtime-main.js.map": "/my-map-app/static/js/runtime-main.2a8cce21.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/my-map-app/static/css/2.4c97ca4f.chunk.css",
@@ -12,10 +12,9 @@
     "static/js/3.4a08565b.chunk.js.map": "/my-map-app/static/js/3.4a08565b.chunk.js.map",
     "index.html": "/my-map-app/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-map-app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.3b0617ff.chunk.css.map": "/my-map-app/static/css/main.3b0617ff.chunk.css.map",
+    "static/css/main.7ada1ead.chunk.css.map": "/my-map-app/static/css/main.7ada1ead.chunk.css.map",
     "static/js/2.5615df04.chunk.js.LICENSE.txt": "/my-map-app/static/js/2.5615df04.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/my-map-app/static/media/woman.201b7331.jpeg",
-    "static/media/home.aee0b3c9.jpg": "/my-map-app/static/media/home.aee0b3c9.jpg",
+    "static/media/App.css": "/my-map-app/static/media/transportation.94ad60db.svg",
     "static/media/logo.5636fbfa.svg": "/my-map-app/static/media/logo.5636fbfa.svg",
     "static/media/logoNav.efbdf2f5.svg": "/my-map-app/static/media/logoNav.efbdf2f5.svg"
   },
@@ -23,7 +22,7 @@
     "static/js/runtime-main.2a8cce21.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.5615df04.chunk.js",
-    "static/css/main.3b0617ff.chunk.css",
-    "static/js/main.4fa73d93.chunk.js"
+    "static/css/main.7ada1ead.chunk.css",
+    "static/js/main.98d0c6db.chunk.js"
   ]
 }
