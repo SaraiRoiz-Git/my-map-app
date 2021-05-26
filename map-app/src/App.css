@@ -239,7 +239,7 @@ g{
   font-weight: 400;
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 768px){
 
   .row{
     flex-wrap: wrap-reverse;
