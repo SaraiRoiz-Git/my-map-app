@@ -24,7 +24,8 @@ class AppNavbar extends React.Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="#/home">Home</Nav.Link>
-                        {/* <Nav.Link href="/#/create-map">CreateMap</Nav.Link> */}
+                        {/* <Nav.Link href="/
+                        #/create-map">CreateMap</Nav.Link> */}
                         <Nav.Link href="#/maps">Maps list</Nav.Link>
                     </Nav>
                     <Nav>
