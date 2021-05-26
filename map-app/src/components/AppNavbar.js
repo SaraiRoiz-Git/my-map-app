@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
 import logoNav from '../img/logoNav.svg';
 
@@ -12,10 +12,10 @@ class AppNavbar extends React.Component {
     }
     render() {
 
-        const login = (!this.props.user) ? <Nav.Link href="/#/login" >Sign in</Nav.Link> : null;
-        const logout = this.props.user ? <Nav.Link href="/#/home"
+        const login = (!this.props.user) ? <Nav.Link href="#/login" >Sign in</Nav.Link> : null;
+        const logout = this.props.user ? <Nav.Link href="#/home"
             onClick={() => this.props.logout()}>Sign out</Nav.Link> : null;
-        const userName = (this.props.user) ? <Nav.Link href="/#/login" >Hello {this.props.user.name}</Nav.Link> : null;
+        const userName = (this.props.user) ? <Nav.Link href="#/login" >Hello {this.props.user.name}</Nav.Link> : null;
 
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
@@ -23,9 +23,9 @@ class AppNavbar extends React.Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/#/home">Home</Nav.Link>
+                        <Nav.Link href="#/home">Home</Nav.Link>
                         {/* <Nav.Link href="/#/create-map">CreateMap</Nav.Link> */}
-                        <Nav.Link href="/#/maps">Maps list</Nav.Link>
+                        <Nav.Link href="#/maps">Maps list</Nav.Link>
                     </Nav>
                     <Nav>
                         {login}
@@ -33,7 +33,7 @@ class AppNavbar extends React.Component {
                         {userName}
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>                 
+            </Navbar>
 
         )
 
