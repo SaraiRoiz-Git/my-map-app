@@ -93,7 +93,7 @@ class Lists extends React.Component {
 
     chooseRate=(rate)=>{
         if(rate ==1){
-            return "Mast visit"
+            return "Must visit"
         }
         if(rate == 2){
             return " Happy To visit "
@@ -103,7 +103,6 @@ class Lists extends React.Component {
 
     checkValidity=()=>{
         if(this.state.place){
-            console.log(this.state.place)
         return(
             <Modal show={this.state.isMiniModalOpen} onHide={()=>this.handleClose("isMiniModalOpen")}>
             <Modal.Header closeButton>
@@ -194,7 +193,7 @@ class Lists extends React.Component {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="importance" id="mostimportant" value="1" onClick={this.changeImportance} checked={this.state.importance == "1"} />
                                     <label class="form-check-label" htmlFor="mostimportant">
-                                        Mast visit
+                                        Mst visit
                                 </label>
                                 </div>
                                 <div class="form-check">

@@ -83,7 +83,7 @@ class EditMapList extends React.Component {
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="importance" id="mostimportant" value="1" onClick={this.changeImportance} checked={this.state.importance == "1"} />
                                     <label class="form-check-label" htmlFor="mostimportant">
-                                        Mast visit
+                                        Must visit
                                 </label>
                                 </div>
                                 <div class="form-check">

@@ -49,7 +49,7 @@ class Login extends React.Component {
                         <Form className="sign-form">
                             <div className="head">
                                 <div className="logo"><img src={logo} alt="Logo" /></div>
-                                <div className="sub-title">Your journey start here</div>
+                                <div className="sub-title">Your journey starts here</div>
 
                             </div>
 

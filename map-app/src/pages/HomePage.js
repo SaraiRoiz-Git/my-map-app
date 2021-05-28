@@ -7,7 +7,6 @@ import moment from 'moment';
 import CountryMap from "../data/CountryMap";
 import GoogleCharts from "../components/GoogleCharts";
 import allCountries from '../data/countriesForChart';
-import home from '../img/home.jpg';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -94,7 +93,7 @@ class HomePage extends React.Component {
                 <Row cla>
                     <Col className="list-bar" sm="12" md="4" lg="3">
                         <Card className="list ">
-                            <Card.Header >Start to explor:</Card.Header>
+                            <Card.Header >Start to explorer:</Card.Header>
                             <Card.Text className="search">
                                 <SearchBox
                                     search={this.state.input}
@@ -107,9 +106,6 @@ class HomePage extends React.Component {
 
                                 <div>
                                     <h4>{this.state.country}</h4>
-                                    {/* <CountryData
-                            country={this.state.country}>
-                        </CountryData> */}
                                 </div>
                                 <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
                                 <Form >
@@ -131,9 +127,8 @@ class HomePage extends React.Component {
                                     <Button type="button"
                                         variant="info"
                                         onClick={this.addMap}
-                                    //disabled
                                     >
-                                        Create Map
+                                        Create a Map
                             </Button>
                                 </Form>
                             </Card.Text>

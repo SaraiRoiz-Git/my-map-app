@@ -34,10 +34,10 @@ class Signup extends React.Component {
                         <Form className="sign-form p-sign">
                             <div className="head">
                                 <div className="logo"><img src={logo} alt="Logo" /></div>
-                                <div className="sub-title">Your journey start here</div>
+                                <div className="sub-title">Your journey starts here</div>
 
                             </div>
-                            <div className="start">Start to create your own trips by signup </div>
+                            <div className="start">Start to create your own trips by sign up </div>
                             <Form.Group>
 
                                 <Form.Label name="name">Name<div className="error"></div></Form.Label>
