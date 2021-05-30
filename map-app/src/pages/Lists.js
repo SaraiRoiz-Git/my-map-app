@@ -24,7 +24,6 @@ class Lists extends React.Component {
     }
 
     createlist = () => {
-        console.log("list",this.props.list)
         return this.props.list.map((place) => {
             if (place.code === this.id) {
                 
@@ -61,7 +60,7 @@ class Lists extends React.Component {
             this.state.marker.lat,
             this.state.marker.lng,
             )
-        this.props.addPlace("places", place)
+        this.props.addPlace(place)
 
         this.setState({ isModalOpen: false })
     }
@@ -81,7 +80,6 @@ class Lists extends React.Component {
 
     showItem=(place)=>{
         if(place){
-            console.log("show items",place.title)
             this.setState({
                 isMiniModalOpen: true,
                 place:place

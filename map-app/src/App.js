@@ -16,17 +16,28 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      user: {
-        name: "Sarai",
-        email: "sr.roiz@gmail.com",
-        pwd: "pwd",
-        currentMap: ""
-      },
-      userslist: user,
-      maps: maps,
-      places: places,
+
+    let usersData = [];
+    if (localStorage.localUsers) {
+      usersData = JSON.parse(localStorage.localUsers);
     }
+
+    let mapsData = [];
+    if (localStorage.localMaps) {
+      mapsData = JSON.parse(localStorage.localMaps);
+    }
+
+    let PlacesData = [];
+    if (localStorage.localPlaces) {
+      PlacesData = JSON.parse(localStorage.localUsers);
+    }
+
+    this.state = {
+      userslist: usersData,
+      maps: mapsData,
+      places: PlacesData
+    }
+
   }
   // log out from app
   logout = () => {
@@ -43,6 +54,11 @@ class App extends React.Component {
   }
   // add new user for list of users
   addUser = (user) => {
+    console.log('this.state.userslist', this.state.userslist)
+    const localUsersString = JSON.stringify(this.state.userslist.concat(user));
+  
+    localStorage.localUsers = localUsersString
+
     this.setState({
       user: user,
       userslist: this.state.userslist.concat(user)
@@ -50,14 +66,23 @@ class App extends React.Component {
   }
 
   // add new map to map list
-  addData = (key, value) => {
+  addMap = (map) => {
+    const localMapsString = JSON.stringify(this.state.maps.concat(map));
+   
+    localStorage.localMaps = localMapsString;
     this.setState({
-      [key]: this.state[key].concat(value)
-
+      maps: this.state.maps.concat(map)
     })
-
   }
 
+  addPlace = (place) => {
+    const localPlacessString = JSON.stringify(this.state.maps.concat(place));
+    console.log(localPlacessString);
+    localStorage.localPages = localPlacessString
+    this.setState({
+      places: this.state.places.concat(place)
+    })
+  }
 
   render() {
     return (
@@ -71,7 +96,7 @@ class App extends React.Component {
         <Route exact path={'/home'}>
           <HomePage
             user={this.state.user}
-            addMap={this.addData}
+            addMap={this.addMap}
             maps={this.state.maps}
           ></HomePage>
         </Route>
@@ -83,8 +108,11 @@ class App extends React.Component {
         </Route>
 
         <Route exact path={'/'}>
-          <Signup addUser={this.addUser}
-            user={this.state.user}>
+          <Signup
+            addUser={this.addUser}
+            user={this.state.user}
+            users={this.state.userslist}>
+
           </Signup>
         </Route>
 
@@ -99,7 +127,7 @@ class App extends React.Component {
           <Lists
             user={this.state.user}
             list={this.state.places}
-            addPlace={this.addData}>
+            addPlace={this.addPlace}>
           </Lists>
         </Route>
 

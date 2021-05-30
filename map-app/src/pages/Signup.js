@@ -7,25 +7,65 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            name: '',
-            pwd: ''
+            pwdError: "",
+            emailError: ""
         }
     }
 
-    createNewUser = () => {
-        const newUser = {
-            email: this.state.email,
-            name: this.state.name,
-            pwd: this.state.pwd
+    validatePassword = () => {
+        if (!this.state.pwd.localeCompare(this.state.pwdConfirm) == 0) {
+            this.setState({
+                pwdError: "*Passwords don’t match."
+            })
+        } else {
+            this.setState({
+                pwdError: ""
+            })
+            return true
         }
-        this.props.addUser(newUser)
-        window.location.href = "#/home";
+        return false;
+    }
+
+    validateEmail = () => {
+        let emailCheck = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+
+        if (!emailCheck.test(this.state.email)) {
+            this.setState({
+                pwdError: "*Email is not valid."
+            })
+        } else if (this.props.users.find(user => user.email.localeCompare(this.state.email) == 0)) {
+            this.setState({
+                pwdError: "*Email already exists."
+            })
+        } else {
+            this.setState({
+                pwdError: ""
+            })
+            return true;
+        }
+        return false;
+
+    }
+
+
+    createNewUser = () => {
+        const emailValid = this.validateEmail();
+        const passwordValid = this.validatePassword();
+
+        if (emailValid && passwordValid) {
+
+            this.props.addUser({
+                email: this.state.email,
+                name: this.state.name,
+                pwd: this.state.pwd
+            })
+            window.location.href = "#/home";
+        }
+
     }
 
 
     render() {
-
         return (
 
             <Container fluid  >
@@ -43,6 +83,7 @@ class Signup extends React.Component {
                                 <Form.Label name="name">Name<div className="error"></div></Form.Label>
                                 <Form.Control type="text" placeholder="Add Name"
                                     onChange={(e) => this.setState({ name: e.target.value })} />
+                                <div className="error">{this.state.emailError}</div>
                             </Form.Group>
 
                             <Form.Group >
@@ -63,7 +104,8 @@ class Signup extends React.Component {
                             <Form.Group >
                                 <Form.Label name="password-confirm">Password confirm<div className="error"></div></Form.Label>
                                 <Form.Control type="password" placeholder="Password"
-                                    onChange={(e) => this.setState({ pwd: e.target.value })} />
+                                    onChange={(e) => this.setState({ pwdConfirm: e.target.value })} />
+                                <div className="error">{this.state.pwdError}</div>
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
@@ -76,18 +118,12 @@ class Signup extends React.Component {
                                     Signup
                                  </Button>
                             </Col>
-
-
                         </Form>
                     </Col>
 
                 </Row>
             </Container>
-
-
-
         )
-
     }
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col,Row, Container, ListGroup } from "react-bootstrap";
+import { Card, Col, Row, Container, ListGroup } from "react-bootstrap";
 import GoogleCharts from "../components/GoogleCharts";
 import { checkUserValidity } from "../utility";
 
@@ -42,7 +42,7 @@ class Maps extends React.Component {
         checkUserValidity(this.props.user)
         const list = this.createlist()
         const ChosenCountries = this.makeListOfChosenCountries(this.props.list)
-
+    
         return (
             <Container fluid className="p-maps">
                 <Row>
@@ -55,10 +55,10 @@ class Maps extends React.Component {
                         </Card>
                     </Col>
                     <Col sm="12" md="9" lg="10" className="map-container">
-                            <GoogleCharts className="my-auto"
-                                setParameters={this.setParameters}
-                                data={ChosenCountries}
-                            />
+                        <GoogleCharts className="my-auto"
+                            setParameters={this.setParameters}
+                            data={ChosenCountries}
+                        />
                     </Col>
                 </Row>
             </Container>
