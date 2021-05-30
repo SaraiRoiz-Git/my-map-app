@@ -54,7 +54,6 @@ class App extends React.Component {
   }
   // add new user for list of users
   addUser = (user) => {
-    console.log('this.state.userslist', this.state.userslist)
     const localUsersString = JSON.stringify(this.state.userslist.concat(user));
   
     localStorage.localUsers = localUsersString
@@ -77,7 +76,6 @@ class App extends React.Component {
 
   addPlace = (place) => {
     const localPlacessString = JSON.stringify(this.state.maps.concat(place));
-    console.log(localPlacessString);
     localStorage.localPages = localPlacessString
     this.setState({
       places: this.state.places.concat(place)
