@@ -6,13 +6,10 @@ class AppNavbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
 
     }
     render() {
-
-        const login = (!this.props.user) ? <Nav.Link href="#/login" >Sign in</Nav.Link> : null;
         const logout = this.props.user ? <Nav.Link href="#/home"
             onClick={() => this.props.logout()}>Sign out</Nav.Link> : null;
         const userName = (this.props.user) ? <Nav.Link href="#/login" >Hello {this.props.user.name}</Nav.Link> : null;
@@ -29,7 +26,6 @@ class AppNavbar extends React.Component {
                         <Nav.Link href="#/maps">Maps list</Nav.Link>
                     </Nav>
                     <Nav>
-                        {login}
                         {logout}
                         {userName}
                     </Nav>

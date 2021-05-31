@@ -208,7 +208,9 @@ g{
   padding-top: 60px;
 }
  
-
+.search-items{
+  position: absolute;
+}
  
 @media screen and (max-height: 800px) {
   .p-sign{

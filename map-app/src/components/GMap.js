@@ -9,35 +9,10 @@ class GMap extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-
-    }
     onMapClick = (e) => {
-        // const geocoder = new google.maps.Geocoder();
-        // geocoder.geocode({ location: e }, (results, status) => {
-        //     if (status === "OK") {
-        //         if (results[0]) {
-        //             // map.setZoom(11);
-        //             // const marker = new google.maps.Marker({
-        //             //   position: latlng,
-        //             //   map: map,
-        //             // });
-        //             const res = results.find((country) => {
-        //                 return country.types.includes("country")
-        //             })
-
-
-        //         } else {
-        //             window.alert("No results found");
-        //         }
-        //     } else {
-        //         window.alert("Geocoder failed due to: " + status);
-        //     }
-
-        //     this.props.setParameters(this.state.pin)
-        //     });
     }
 
+    //create markers for the list of places
     createMarkers = (places) => {
         if (places) {
             return places.map((place) => {

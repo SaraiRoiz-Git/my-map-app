@@ -39,13 +39,16 @@ class HomePage extends React.Component {
         })
     }
 
+    // add to state  new map
     addMap = () => {
         const data = countries.find((curr) => curr.name === this.state.input)
-        if (this.props.maps.find((curr) => curr.country === this.state.input)) {
+        //check if map alredy exist
+        if (this.props.list.find((curr) => curr.country === this.state.input)) {
             this.setState({
                 error: `*you alredy have map of ${this.state.input} in your maps`
             })
         }
+
         else if (data) {
             const map = new CountryMap(
                 this.state.country,
@@ -55,7 +58,8 @@ class HomePage extends React.Component {
                 data.capital,
                 moment().format("MMM Do YYYY"),
                 this.state.subTitle,
-                this.state.freeText)
+                this.state.freeText,
+                this.props.user.email)
             this.props.addMap(map);
             window.location.href = '#/maps'
 

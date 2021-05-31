@@ -7,10 +7,6 @@ import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Maps from './pages/Maps';
-import EditMapList from './pages/EditMapList';
-import user from './data/users.json'
-import maps from './data/maps.json'
-import places from './data/places.json'
 import Lists from './pages/Lists';
 class App extends React.Component {
 
@@ -33,6 +29,11 @@ class App extends React.Component {
     }
 
     this.state = {
+      user: {
+        pwd: "",
+        email: "",
+        name: ""
+      },
       userslist: usersData,
       maps: mapsData,
       places: PlacesData
@@ -47,15 +48,19 @@ class App extends React.Component {
 
   }
   // update the user on the app
-  login = (userObj) => {
+  login = (user) => {
+    const maps = this.state.maps.filter(map => map.email === user.email)
+    const pins = this.state.places.filter(pin => pin.email === user.email)
     this.setState({
-      user: userObj
+      user: user,
+      places: pins,
+      maps: maps
     })
   }
   // add new user for list of users
   addUser = (user) => {
     const localUsersString = JSON.stringify(this.state.userslist.concat(user));
-  
+
     localStorage.localUsers = localUsersString
 
     this.setState({
@@ -67,7 +72,7 @@ class App extends React.Component {
   // add new map to map list
   addMap = (map) => {
     const localMapsString = JSON.stringify(this.state.maps.concat(map));
-   
+
     localStorage.localMaps = localMapsString;
     this.setState({
       maps: this.state.maps.concat(map)
@@ -83,6 +88,8 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("maps", this.state.maps);
+    console.log("pins", this.state.places);
     return (
       <HashRouter>
         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}>
@@ -95,7 +102,7 @@ class App extends React.Component {
           <HomePage
             user={this.state.user}
             addMap={this.addMap}
-            maps={this.state.maps}
+            list={this.state.maps}
           ></HomePage>
         </Route>
 
@@ -108,7 +115,6 @@ class App extends React.Component {
         <Route exact path={'/'}>
           <Signup
             addUser={this.addUser}
-            user={this.state.user}
             users={this.state.userslist}>
 
           </Signup>

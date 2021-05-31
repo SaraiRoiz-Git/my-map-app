@@ -7,12 +7,12 @@ class Autocomplete extends React.Component {
         super(props);
     }
 
-
+    //component that use google map search restrict to the chosen country
     render() {
 
         return (
             <div className="pac-container">
-                <ReactGoogleAutocomplete 
+                <ReactGoogleAutocomplete
                     apiKey={'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8'}
                     onPlaceSelected={(place) => {
                         Geocode.setApiKey('AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8');
@@ -26,7 +26,6 @@ class Autocomplete extends React.Component {
                                 this.props.updateAdress(place.formatted_address, { lat, lng })
                             }
                         );
-
                     }}
                     options={{
                         types: [["establishment"], ["address"], ["(region)"]],

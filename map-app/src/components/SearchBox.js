@@ -29,7 +29,7 @@ class SearchBox extends React.Component {
                     value={this.props.search}
                     placeholder={this.props.placeHolder}
                     onChange={(e) => { this.props.onSearchChanged(e.target.value) }} />
-                <ListGroup>
+                <ListGroup className="search-items">
                     {countries}
                 </ListGroup>
             </Form.Group>

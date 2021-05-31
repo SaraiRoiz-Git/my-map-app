@@ -41,8 +41,8 @@ class Maps extends React.Component {
     render() {
         checkUserValidity(this.props.user)
         const list = this.createlist()
-        const ChosenCountries = this.makeListOfChosenCountries(this.props.list)
-    
+        const ChosenCountries = [["countries"]].concat(this.makeListOfChosenCountries(this.props.list));
+
         return (
             <Container fluid className="p-maps">
                 <Row>

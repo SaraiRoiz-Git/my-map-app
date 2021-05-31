@@ -8,18 +8,21 @@ class Signup extends React.Component {
         super(props);
         this.state = {
             pwdError: "",
-            emailError: ""
+            emailError: "",
+            nameError: ""
         }
     }
 
-    validatePassword = () => {
-        if (!this.state.pwd.localeCompare(this.state.pwdConfirm) == 0) {
+    validateName = () => {
+        if (!this.state.name) {
             this.setState({
-                pwdError: "*Passwords don’t match."
+                nameError: "*Please fill in this field"
             })
-        } else {
+        }
+
+        else {
             this.setState({
-                pwdError: ""
+                nameError: ""
             })
             return true
         }
@@ -28,31 +31,60 @@ class Signup extends React.Component {
 
     validateEmail = () => {
         let emailCheck = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-
-        if (!emailCheck.test(this.state.email)) {
+        if (!this.state.email) {
             this.setState({
-                pwdError: "*Email is not valid."
+                emailError: "Please fill in this field"
+            })
+        }
+        else if (!emailCheck.test(this.state.email)) {
+            this.setState({
+                emailError: "*Email is not valid."
             })
         } else if (this.props.users.find(user => user.email.localeCompare(this.state.email) == 0)) {
             this.setState({
-                pwdError: "*Email already exists."
+                emailError: "*Email already exists."
             })
         } else {
             this.setState({
-                pwdError: ""
+                emailError: ""
             })
             return true;
         }
         return false;
-
     }
 
+    validatePassword = () => {
+        if (!this.state.pwd) {
+            this.setState({
+                pwdError: "*Please fill in this field"
+            })
+        }
+        else if (this.state.pwd.length < 6) {
+            this.setState({
+                pwdError: "*Password length must be at least 6 characters"
+            })
+        }
+        else if (!this.state.pwd.localeCompare(this.state.pwdConfirm) == 0) {
+            this.setState({
+                pwd2Error: "*Passwords don’t match."
+            })
+        }
+        else {
+            this.setState({
+                pwdError: "",
+                pwd2Error: ""
+            })
+            return true
+        }
+        return false;
+    }
 
     createNewUser = () => {
+        const nameValid = this.validateName();
         const emailValid = this.validateEmail();
         const passwordValid = this.validatePassword();
 
-        if (emailValid && passwordValid) {
+        if (emailValid && passwordValid && nameValid) {
 
             this.props.addUser({
                 email: this.state.email,
@@ -83,29 +115,28 @@ class Signup extends React.Component {
                                 <Form.Label name="name">Name<div className="error"></div></Form.Label>
                                 <Form.Control type="text" placeholder="Add Name"
                                     onChange={(e) => this.setState({ name: e.target.value })} />
-                                <div className="error">{this.state.emailError}</div>
+                                <div className="error">{this.state.nameError}</div>
                             </Form.Group>
 
                             <Form.Group >
                                 <Form.Label name="email">Email address<div className="error"></div></Form.Label>
                                 <Form.Control type="email" placeholder="Enter email"
                                     onChange={(e) => this.setState({ email: e.target.value })} />
-                                <Form.Text className="text-muted">
-
-                                </Form.Text>
+                                <div className="error">{this.state.emailError}</div>
                             </Form.Group>
 
                             <Form.Group >
                                 <Form.Label name="password">Password<div className="error"></div></Form.Label>
                                 <Form.Control type="password" placeholder="Password"
                                     onChange={(e) => this.setState({ pwd: e.target.value })} />
+                                <div className="error">{this.state.pwdError}</div>
                             </Form.Group>
 
                             <Form.Group >
                                 <Form.Label name="password-confirm">Password confirm<div className="error"></div></Form.Label>
                                 <Form.Control type="password" placeholder="Password"
                                     onChange={(e) => this.setState({ pwdConfirm: e.target.value })} />
-                                <div className="error">{this.state.pwdError}</div>
+                                <div className="error">{this.state.pwd2Error}</div>
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">

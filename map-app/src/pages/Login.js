@@ -37,7 +37,10 @@ class Login extends React.Component {
             this.props.login(validUser)
             window.location.href = "#/home"
         } else {
-            alert("user or password incorect")
+            this.setState({
+                error: "*user or password incorect"
+            })
+
         }
     }
     render() {
@@ -61,7 +64,9 @@ class Login extends React.Component {
                             <Form.Group  >
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" onChange={this.updatePassword} value={this.state.pwd} />
+                                <div className="error">{this.state.error}</div>
                             </Form.Group>
+
                             <Form.Group >
                                 Dont have acount yet? Sign
                                 <Link to="/"> here</Link>

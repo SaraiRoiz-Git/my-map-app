@@ -59,6 +59,7 @@ class Lists extends React.Component {
             this.state.freeText,
             this.state.marker.lat,
             this.state.marker.lng,
+            this.props.user.email
             )
         this.props.addPlace(place)
 
