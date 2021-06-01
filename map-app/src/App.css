@@ -169,10 +169,15 @@ g{
 }
 
 .title{
-  font-size: 1.5rem;
+  font-size: 1.5 rem !;
   font-weight: 500;
 }
 
+.add-place{
+  margin: 10px 30px;
+
+
+}
 .search{
   padding: 30px;
 }
@@ -183,6 +188,9 @@ g{
   margin-bottom: 15px;
 }
 
+.card-header{
+  background-color: #e3e9ee;
+}
 
 .pac-target-input{
   display: block;
@@ -203,11 +211,10 @@ g{
 .form-check{
   margin-bottom: 10px;
 }
-
-.add-to-list{
-  padding-top: 60px;
-}
  
+.add-error{
+  padding-top: 40px;
+}
 .search-items{
   position: absolute;
 }

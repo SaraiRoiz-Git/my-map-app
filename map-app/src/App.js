@@ -23,9 +23,9 @@ class App extends React.Component {
       mapsData = JSON.parse(localStorage.localMaps);
     }
 
-    let PlacesData = [];
+    let placesData = [];
     if (localStorage.localPlaces) {
-      PlacesData = JSON.parse(localStorage.localUsers);
+      placesData = JSON.parse(localStorage.localPlaces);
     }
 
     this.state = {
@@ -36,7 +36,7 @@ class App extends React.Component {
       },
       userslist: usersData,
       maps: mapsData,
-      places: PlacesData
+      places: placesData
     }
 
   }
@@ -80,11 +80,13 @@ class App extends React.Component {
   }
 
   addPlace = (place) => {
-    const localPlacessString = JSON.stringify(this.state.maps.concat(place));
-    localStorage.localPages = localPlacessString
+    const localPlacesString = JSON.stringify(this.state.places.concat(place));
+    localStorage.localPlaces = localPlacesString;
     this.setState({
       places: this.state.places.concat(place)
     })
+
+
   }
 
   render() {
