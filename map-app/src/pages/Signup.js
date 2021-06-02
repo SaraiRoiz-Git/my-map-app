@@ -33,7 +33,7 @@ class Signup extends React.Component {
         let emailCheck = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
         if (!this.state.email) {
             this.setState({
-                emailError: "Please fill in this field"
+                emailError: "*Please fill in this field"
             })
         }
         else if (!emailCheck.test(this.state.email)) {
