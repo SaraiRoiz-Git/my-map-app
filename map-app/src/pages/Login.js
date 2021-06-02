@@ -38,7 +38,7 @@ class Login extends React.Component {
             window.location.href = "#/home"
         } else {
             this.setState({
-                error: "*user or password incorect"
+                error: "*User or Password incorect"
             })
 
         }

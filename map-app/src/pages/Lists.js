@@ -16,7 +16,6 @@ class Lists extends React.Component {
             isModalOpen: false,
             isMiniModalOpen: false,
         }
-        console.log("this.props.match.params.id",this.props.match.params.id)
     }
 
     createlist = () => {
@@ -107,7 +106,7 @@ class Lists extends React.Component {
                                         onClick={() => { this.setState({ isModalOpen: true }) }}
                                     >
                                         Add new Place
-                            </Button>
+                                     </Button>
                                     {list}
                                 </ListGroup>
                             </div>

@@ -78,15 +78,9 @@ class HomePage extends React.Component {
         })
     }
 
-    updateSubTitle = (e) => {
+    updateData = (e) => {
         this.setState({
-            subTitle: e.target.value
-        })
-    }
-
-    updateFreeText = (e) => {
-        this.setState({
-            freeText: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -115,17 +109,19 @@ class HomePage extends React.Component {
                                 <Form >
                                     <Form.Group>
                                         <Form.Control
+                                            name="subTitle"
                                             type="text"
                                             placeholder="Add your own sub title"
-                                            onChange={this.updateSubTitle}
+                                            onChange={this.updateData}
                                             value={this.state.subTitle} />
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
+                                            name = "freeText"
                                             as="textarea"
                                             rows={3}
                                             placeholder="Add Free text"
-                                            onChange={this.updateFreeText}
+                                            onChange={this.updateData}
                                             value={this.state.freeText} />
                                     </Form.Group>
                                     <Button type="button"
