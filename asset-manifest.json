@@ -1,28 +1,26 @@
 {
   "files": {
-    "main.css": "/my-map-app/static/css/main.7ada1ead.chunk.css",
-    "main.js": "/my-map-app/static/js/main.4fa73d93.chunk.js",
-    "main.js.map": "/my-map-app/static/js/main.4fa73d93.chunk.js.map",
-    "runtime-main.js": "/my-map-app/static/js/runtime-main.2a8cce21.js",
-    "runtime-main.js.map": "/my-map-app/static/js/runtime-main.2a8cce21.js.map",
+    "main.css": "/my-map-app/static/css/main.736a92cb.chunk.css",
+    "main.js": "/my-map-app/static/js/main.65126935.chunk.js",
+    "main.js.map": "/my-map-app/static/js/main.65126935.chunk.js.map",
+    "runtime-main.js": "/my-map-app/static/js/runtime-main.edac73bb.js",
+    "runtime-main.js.map": "/my-map-app/static/js/runtime-main.edac73bb.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/my-map-app/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.5615df04.chunk.js": "/my-map-app/static/js/2.5615df04.chunk.js",
-    "static/js/2.5615df04.chunk.js.map": "/my-map-app/static/js/2.5615df04.chunk.js.map",
-    "static/js/3.4a08565b.chunk.js": "/my-map-app/static/js/3.4a08565b.chunk.js",
-    "static/js/3.4a08565b.chunk.js.map": "/my-map-app/static/js/3.4a08565b.chunk.js.map",
+    "static/js/2.d76b1297.chunk.js": "/my-map-app/static/js/2.d76b1297.chunk.js",
+    "static/js/2.d76b1297.chunk.js.map": "/my-map-app/static/js/2.d76b1297.chunk.js.map",
     "index.html": "/my-map-app/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-map-app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.7ada1ead.chunk.css.map": "/my-map-app/static/css/main.7ada1ead.chunk.css.map",
-    "static/js/2.5615df04.chunk.js.LICENSE.txt": "/my-map-app/static/js/2.5615df04.chunk.js.LICENSE.txt",
+    "static/css/main.736a92cb.chunk.css.map": "/my-map-app/static/css/main.736a92cb.chunk.css.map",
+    "static/js/2.d76b1297.chunk.js.LICENSE.txt": "/my-map-app/static/js/2.d76b1297.chunk.js.LICENSE.txt",
     "static/media/App.css": "/my-map-app/static/media/transportation.94ad60db.svg",
     "static/media/logo.5636fbfa.svg": "/my-map-app/static/media/logo.5636fbfa.svg",
     "static/media/logoNav.efbdf2f5.svg": "/my-map-app/static/media/logoNav.efbdf2f5.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a8cce21.js",
+    "static/js/runtime-main.edac73bb.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.5615df04.chunk.js",
-    "static/css/main.7ada1ead.chunk.css",
-    "static/js/main.4fa73d93.chunk.js"
+    "static/js/2.d76b1297.chunk.js",
+    "static/css/main.736a92cb.chunk.css",
+    "static/js/main.65126935.chunk.js"
   ]
 }
