@@ -1,14 +1,9 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 import Marker from "./Marker";
-let google = window.google;
-
 
 class GMap extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
+    
     onMapClick = (e) => {
     }
 

@@ -40,7 +40,7 @@ class Signup extends React.Component {
             this.setState({
                 emailError: "*Email is not valid."
             })
-        } else if (this.props.users.find(user => user.email.localeCompare(this.state.email) == 0)) {
+        } else if (this.props.users.find(user => user.email.localeCompare(this.state.email) === 0)) {
             this.setState({
                 emailError: "*Email already exists."
             })
@@ -64,7 +64,7 @@ class Signup extends React.Component {
                 pwdError: "*Password length must be at least 6 characters"
             })
         }
-        else if (!this.state.pwd.localeCompare(this.state.pwdConfirm) == 0) {
+        else if (!this.state.pwd.localeCompare(this.state.pwdConfirm) === 0) {
             this.setState({
                 pwd2Error: "*Passwords don’t match."
             })

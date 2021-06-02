@@ -3,11 +3,7 @@ import ReactGoogleAutocomplete from "react-google-autocomplete";
 import Geocode from "react-geocode";
 
 class Autocomplete extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    //component that use google map search restrict to the chosen country
+    
     render() {
 
         return (

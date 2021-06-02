@@ -1,11 +1,7 @@
 import React from "react";
 import { Form, ListGroup } from "react-bootstrap";
-import { checkUserValidity } from "../utility";
 
 class SearchBox extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const result = this.props.result

@@ -4,10 +4,6 @@ import GoogleCharts from "../components/GoogleCharts";
 import { checkUserValidity } from "../utility";
 
 class Maps extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     goTo = (id) => {
         window.location.href = `#/list/${id}`

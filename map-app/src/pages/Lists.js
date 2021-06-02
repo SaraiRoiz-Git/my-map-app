@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, Card, Col, Container, Row, Modal, Form, ListGroup } from "react-bootstrap";
-import Autocomplete from "../components/Autocomplete";
+import { Button, Card, Col, Container, Row, Modal, ListGroup } from "react-bootstrap";
 import countries from '../data/countries.json'
 import GMap from "../components/GMap";
 import { checkUserValidity, getLatlngById } from "../utility";
@@ -36,7 +35,7 @@ class Lists extends React.Component {
                     </Card.Text>
                 </ListGroup.Item>)
             }
-            return
+            return null
         })
     }
 
@@ -57,10 +56,10 @@ class Lists extends React.Component {
     }
 
     chooseRate = (rate) => {
-        if (rate == 1) {
+        if (rate === 1) {
             return "Must visit"
         }
-        if (rate == 2) {
+        if (rate === 2) {
             return " Happy To visit "
         }
         return "Visit on time left"
@@ -93,7 +92,7 @@ class Lists extends React.Component {
         const title =countries.find(country =>{
            return (country['country_code'] === this.id)}).name
         return (
-            <Container fluid className="p-maps screen">
+            <Container fluid className ="p-maps screen">
                 {this.showItem()}
                 <Row >
                     <Col className="list-bar" sm="12" md="3" lg="3">

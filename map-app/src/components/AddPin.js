@@ -92,19 +92,19 @@ class AddPin extends React.Component {
             </Form.Group>
             <div className="importance">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="mostimportant" value="1" onClick={this.changeImportance} checked={this.state.importance == "1"} />
+                    <input class="form-check-input" type="radio" name="importance" id="mostimportant" value="1" onClick={this.changeImportance} checked={this.state.importance === "1"} />
                     <label class="form-check-label" htmlFor="mostimportant">
                         Must visit
                 </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="midimportant" value="2" onClick={this.changeImportance} checked={this.state.importance == "2"} />
+                    <input class="form-check-input" type="radio" name="importance" id="midimportant" value="2" onClick={this.changeImportance} checked={this.state.importance === "2"} />
                     <label class="form-check-label" htmlFor="midimportant">
                         Happy To visit
                 </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="leastimportant" value="3" onClick={this.changeImportance} checked={this.state.importance == "3"} />
+                    <input class="form-check-input" type="radio" name="importance" id="leastimportant" value="3" onClick={this.changeImportance} checked={this.state.importance === "3"} />
                     <label class="form-check-label" htmlFor="leastimportant">
                         Visit on time left
                     </label>

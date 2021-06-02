@@ -1,10 +1,6 @@
 import React from "react";
 import Chart from "react-google-charts";
 
-let google = window.google;
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-
 class GoogleCharts extends React.Component {
   constructor(props) {
     super(props);
