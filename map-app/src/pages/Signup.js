@@ -109,7 +109,7 @@ class Signup extends React.Component {
                                 <div className="sub-title">Your journey starts here</div>
 
                             </div>
-                            <div className="start">Start to create your own trips by sign up </div>
+                            <div className="start">Start creating your own trips</div>
                             <Form.Group>
 
                                 <Form.Label name="name">Name<div className="error"></div></Form.Label>

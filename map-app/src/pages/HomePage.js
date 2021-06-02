@@ -105,7 +105,7 @@ class HomePage extends React.Component {
                                 <div>
                                     <h4>{this.state.country}</h4>
                                 </div>
-                                <div className="data">Date of create:{moment().format("MMM Do YYYY")}</div>
+                                <div className="data">Created on:{moment().format("MMM Do YYYY")}</div>
                                 <Form >
                                     <Form.Group>
                                         <Form.Control

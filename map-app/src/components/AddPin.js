@@ -86,13 +86,12 @@ class AddPin extends React.Component {
                     onChange={this.changeImportance}
                     value={this.state.category} custom>
                     <option value="selectCategory">Select Category</option>
-                    <option value="hotels">hotels</option>
+                    <option value="hotels">Hotels</option>
                     <option value="market-place">Market Place</option>
                     <option value="restaurnts">Restaurnts</option>
                     <option value="sites">Sites</option>
                     <option value="shopping">Shopping</option>
                     <option value="transportation">Transportation</option>
-                    <option value="">**** Add your on category***</option>
                 </Form.Control>
                 <div className="error">{this.state.errorCategory}</div>
             </Form.Group>
