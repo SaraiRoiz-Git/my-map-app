@@ -12,6 +12,7 @@ class Pin {
         this.lng = lng;
         this.email = email;
         this.id = uuidv4();
+        this.className = "pin" ;
     }
 }
 

@@ -12,11 +12,12 @@ class GMap extends React.Component {
         if (places) {
             return places.map((place) => {
                 return (<Marker
+                    className={place.className}
                     lat={place.lat}
                     lng={place.lng}
                     text={place.title}
-                    address={place.addres}
                     category={place.category}
+                    name = {place.className}
                 >
                 </Marker>)
             })
@@ -24,7 +25,9 @@ class GMap extends React.Component {
     }
 
     render() {
+
         const markers = this.createMarkers(this.props.places)
+        console.log("markers",markers)
         return (
             <div className="g-map">
                 <GoogleMapReact

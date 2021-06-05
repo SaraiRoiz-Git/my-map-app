@@ -85,6 +85,7 @@ class HomePage extends React.Component {
     }
 
     render() {
+     
         checkUserValidity(this.props.user)
         return (
             <Container fluid className="screen p-maps">

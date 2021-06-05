@@ -124,16 +124,23 @@
   z-index: 9999 !important;
 }
 
+.pin-marker{
+  width: 40px;
+  height: 60px;
+  z-index: 9999 !important;
+}
 .marker-info{
    display: none; 
  }
 
-.marker:hover > .marker-info {
-  background-color: rgba(248, 247, 245, 0.8);
+.marker:hover>.marker-info {
+ 
+  background-color: rgba(68, 59, 68, 0.8);
+  color : white !important;
   border-radius: 5px;
   padding: 10px;
   font-size: 1rem;
-  display:inline !important;
+  display:inline-block;
 
 }
 .list-group-item{

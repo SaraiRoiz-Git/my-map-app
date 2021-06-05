@@ -22,7 +22,10 @@ class Lists extends React.Component {
         return this.props.list.map((place) => {
             if (place.code === this.id) {
 
-                return (<ListGroup.Item id="place.id" onClick={() => { this.showItem(place) }}>
+                return (<ListGroup.Item id="place.id" onClick={() => { this.showItem(place) }}
+                   onMouseOver ={()=>{this.props.placeMark(place,"pin-marker")}}
+                   onMouseOut={()=>{this.props.placeMark(place,"pin")}}
+                >
                     <Card.Title>
                         {place.title}
                     </Card.Title>
@@ -88,10 +91,11 @@ class Lists extends React.Component {
         const list = this.createlist();
         const modalItem = this.checkValidity();
 
-        const title =countries.find(country =>{
-           return (country['country_code'] === this.id)}).name
+        const title = countries.find(country => {
+            return (country['country_code'] === this.id)
+        }).name
         return (
-            <Container fluid className ="p-maps screen">
+            <Container fluid className="p-maps screen">
                 {this.showItem()}
                 <Row >
                     <Col className="list-bar" sm="12" md="3" lg="3">
@@ -101,7 +105,7 @@ class Lists extends React.Component {
                                     <div className="title">{title}</div>
                                 </Card.Header>
                                 <ListGroup variant="flush">
-                                    <Button  className="add-place" type="button"
+                                    <Button className="add-place" type="button"
                                         variant="info"
                                         onClick={() => { this.setState({ isModalOpen: true }) }}
                                     >

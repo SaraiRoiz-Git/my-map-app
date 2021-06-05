@@ -89,9 +89,16 @@ class App extends React.Component {
 
   }
 
+  placeMark = (currPlace,className) => {
+    // console.log("placeMark inside",currPlace) 
+    const index = this.state.places.findIndex((place) => place.id === currPlace.id);
+   let places = [...this.state.places]
+   places[index].className = className;
+    this.setState({ places:places});
+  }
+
   render() {
-    console.log("maps", this.state.maps);
-    console.log("pins", this.state.places);
+    console.log("placeMark out side",this.state.places) 
     return (
       <HashRouter>
         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}>
@@ -133,7 +140,9 @@ class App extends React.Component {
           <Lists
             user={this.state.user}
             list={this.state.places}
-            addPlace={this.addPlace}>
+            addPlace={this.addPlace}
+            placeMark={this.placeMark}>
+  
           </Lists>
         </Route>
 
