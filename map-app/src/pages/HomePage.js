@@ -111,7 +111,7 @@ class HomePage extends React.Component {
                                         <Form.Control
                                             name="subTitle"
                                             type="text"
-                                            placeholder="Add your own sub title"
+                                            placeholder="Add your own title for this map"
                                             onChange={this.updateData}
                                             value={this.state.subTitle} />
                                     </Form.Group>
@@ -120,7 +120,7 @@ class HomePage extends React.Component {
                                             name = "freeText"
                                             as="textarea"
                                             rows={3}
-                                            placeholder="Add Free text"
+                                            placeholder="Add Free text about this map"
                                             onChange={this.updateData}
                                             value={this.state.freeText} />
                                     </Form.Group>

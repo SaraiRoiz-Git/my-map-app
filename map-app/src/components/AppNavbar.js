@@ -16,18 +16,15 @@ class AppNavbar extends React.Component {
 
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
-                <Navbar.Brand className="logo-nav"><img src={logoNav} alt="Logo" /></Navbar.Brand>
+                <Navbar.Brand className="logo-nav" href="#/home"><img src={logoNav} alt="Logo" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#/home">Home</Nav.Link>
-                        {/* <Nav.Link href="/
-                        #/create-map">CreateMap</Nav.Link> */}
                         <Nav.Link href="#/maps">Maps list</Nav.Link>
                     </Nav>
                     <Nav>
-                        {logout}
                         {userName}
+                        {logout}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
