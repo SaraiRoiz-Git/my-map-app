@@ -23,8 +23,8 @@ class Lists extends React.Component {
             if (place.code === this.id) {
 
                 return (<ListGroup.Item id="place.id" onClick={() => { this.showItem(place) }}
-                   onMouseOver ={()=>{this.props.placeMark(place,"pin-marker")}}
-                   onMouseOut={()=>{this.props.placeMark(place,"pin")}}
+                    onMouseOver={() => { this.props.placeMark(place, "pin-marker") }}
+                    onMouseOut={() => { this.props.placeMark(place, "pin") }}
                 >
                     <Card.Title>
                         {place.title}
@@ -49,6 +49,17 @@ class Lists extends React.Component {
 
 
     showItem = (place) => {
+
+
+
+
+
+
+
+
+
+
+
         if (place) {
             this.setState({
                 isMiniModalOpen: true,
@@ -120,6 +131,7 @@ class Lists extends React.Component {
                         <GMap className="map-container my-auto"
                             center={this.latlng}
                             places={this.props.list}
+                            showItem ={this.showItem}
                         ></GMap>
                     </Col>
                 </Row>
@@ -129,6 +141,8 @@ class Lists extends React.Component {
                     handleClose={this.handleClose}
                     addPlace={this.props.addPlace}
                     user={this.props.user}
+
+
                 />
                 {modalItem}
             </Container>

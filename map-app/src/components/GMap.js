@@ -12,12 +12,10 @@ class GMap extends React.Component {
         if (places) {
             return places.map((place) => {
                 return (<Marker
-                    className={place.className}
+                    place={place}
                     lat={place.lat}
-                    lng={place.lng}
-                    text={place.title}
-                    category={place.category}
-                    name = {place.className}
+                    lng={place.lng} 
+                    showItem={this.props.showItem}
                 >
                 </Marker>)
             })
