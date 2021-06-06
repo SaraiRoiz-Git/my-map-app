@@ -19,6 +19,7 @@ class Lists extends React.Component {
     }
 
     createlist = () => {
+        let sortedList  =  this.props.list  
         return this.props.list.map((place) => {
             if (place.code === this.id) {
 
@@ -86,6 +87,7 @@ class Lists extends React.Component {
         }
     }
     render() {
+
         checkUserValidity(this.props.user)
         const list = this.createlist();
         const modalItem = this.checkValidity();

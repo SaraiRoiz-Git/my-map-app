@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body{
+  overflow: hidden;
+}
+
 .sign-container{
   background: url(".\\img\\home1.jpg") no-repeat center center fixed ;
   background-size: cover;
