@@ -19,11 +19,13 @@ class Lists extends React.Component {
     }
 
     createlist = () => {
-        let sortedList  =  this.props.list  
-        return this.props.list.map((place) => {
+        let sortedList = this.props.list.sort((a, b) => a.category > b.category && 1 || -1)
+        console.log("list", this.props.list)
+        console.log("sorted list", sortedList)
+        return sortedList.map((place) => {
             if (place.code === this.id) {
 
-                return (<ListGroup.Item id="place.id" onClick={() => { this.showItem(place) }}
+                return (<ListGroup.Item id="place.id" className={`list-${place.category}`} onClick={() => { this.showItem(place) }}
                     onMouseOver={() => { this.props.placeMark(place, "pin-marker") }}
                     onMouseOut={() => { this.props.placeMark(place, "pin") }}
                 >
@@ -121,7 +123,7 @@ class Lists extends React.Component {
                         <GMap className="map-container my-auto"
                             center={this.latlng}
                             places={this.props.list}
-                            showItem ={this.showItem}
+                            showItem={this.showItem}
                         ></GMap>
                     </Col>
                 </Row>

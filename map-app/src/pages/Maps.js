@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row, Container, ListGroup } from "react-bootstrap";
+import { Card, Col, Row, Container, ListGroup, Button } from "react-bootstrap";
 import GoogleCharts from "../components/GoogleCharts";
 import { checkUserValidity } from "../utility";
 
@@ -46,6 +46,12 @@ class Maps extends React.Component {
                         <Card className="list">
                             <Card.Header className="title">My World Maps</Card.Header>
                             <ListGroup variant="flush">
+                                <Button className="add-place" type="button"
+                                    variant="info"
+                                    onClick={() => { window.location.href = `#/home` }}
+                                >
+                                    Create new map
+                                     </Button>
                                 {list}
                             </ListGroup>
                         </Card>
