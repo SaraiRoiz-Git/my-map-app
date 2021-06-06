@@ -47,19 +47,7 @@ class Lists extends React.Component {
         })
     }
 
-
     showItem = (place) => {
-
-
-
-
-
-
-
-
-
-
-
         if (place) {
             this.setState({
                 isMiniModalOpen: true,
