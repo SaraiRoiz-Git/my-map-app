@@ -32,7 +32,7 @@ class GMap extends React.Component {
                     bootstrapURLKeys={{ key: 'AIzaSyAehE6kMUhBdd8FMJ5A-3OVG1q6S3c5h-8' }}
                     height={'100%'} width={'100%'}
                     defaultCenter={this.props.center}
-                    defaultZoom={7}
+                    defaultZoom={4}
                     onClick={this.onMapClick}
                 >
                     {markers}

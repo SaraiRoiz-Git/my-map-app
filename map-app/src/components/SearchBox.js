@@ -9,7 +9,7 @@ class SearchBox extends React.Component {
         if (result) {
             countries = result.map((country) => {
                 return (
-                    <ListGroup.Item
+                    <ListGroup.Item className="list-group-country"
                         action key={country.name}
                         onClick={() => { this.props.onResultSelected(country.name) }}
                     >{country.name}</ListGroup.Item>

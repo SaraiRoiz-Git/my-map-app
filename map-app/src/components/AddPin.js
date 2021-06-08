@@ -59,84 +59,83 @@ class AddPin extends React.Component {
             <Modal show={this.props.isModalOpen} onHide={()=>this.props.handleClose("isModalOpen")}>
                 <Form >
                     <Modal.Header closeButton>
-                        <Modal.Title>Search for a place
-                    
+                        <Modal.Title>
+                            Search for a place
                         </Modal.Title>
                     </Modal.Header>
+                    <Modal.Body >
+                        <Autocomplete
+                            updateAdress={this.updateAdress}
+                            id={this.props.id} >      
+                        </Autocomplete> 
+                    
+                        <Form.Group className="add-error">
+                            <div className="error">{this.state.error}</div>
+                        </Form.Group>           
+                        <Form.Group className="add-to-list">
+                            <Form.Control type="text"
+                                name="title"
+                                placeholder="My title"
+                                value={this.state.title}
+                                onChange={this.changeImportance} />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.SelectCustom">
+                             <Form.Control as="select"
+                                name="category"
+                                onChange={this.changeImportance}
+                                value={this.state.category} custom>
+                                <option value="selectCategory">Select Category</option>
+                                <option value="hotels">Hotels</option>
+                                <option value="market-place">Market Place</option>
+                                <option value="restaurnts">Restaurnts</option>
+                                <option value="sites">Sites</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="transportation">Transportation</option>
+                            </Form.Control>
+                                <div className="error">{this.state.errorCategory}</div>
+                        </Form.Group>
+                        <div className="importance">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="importance" id="mostimportant" 
+                                    value="1" onClick={this.changeImportance} checked />
+                                <label class="form-check-label" htmlFor="mostimportant">
+                                        Must visit
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="importance" id="midimportant" 
+                                    value="2" onClick={this.changeImportance} checked={this.state.importance === "2"} />
+                                <label class="form-check-label" htmlFor="midimportant">
+                                        Happy To visit
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="importance" id="leastimportant"
+                                    value="3" onClick={this.changeImportance} checked={this.state.importance === "3"} />
+                                <label class="form-check-label" htmlFor="leastimportant">
+                                    Visit on time left
+                                </label>
+                            </div>
+                        </div>
+                        <Form.Group controlId="exampleForm.ControlTextarea1">
+                            <Form.Control as="textarea"
+                                rows={3}
+                                placeholder="Add Free text"
+                                onChange={this.changeImportance}
+                                name="freeText" 
+                            />
+                        </Form.Group>
+                    </Modal.Body>
 
-        <Modal.Body >
-        <Autocomplete
-            updateAdress={this.updateAdress}
-            id={this.props.id} >      
-        </Autocomplete> 
-                   
-        <Form.Group className="add-error">
-             <div className="error">{this.state.error}</div>
-        </Form.Group>           
-        <Form.Group className="add-to-list">
-            <Form.Control type="text"
-                name="title"
-                placeholder="My title"
-                value={this.state.title}
-                onChange={this.changeImportance} />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.SelectCustom">
-                <Form.Control as="select"
-                    name="category"
-                    onChange={this.changeImportance}
-                    value={this.state.category} custom>
-                    <option value="selectCategory">Select Category</option>
-                    <option value="hotels">Hotels</option>
-                    <option value="market-place">Market Place</option>
-                    <option value="restaurnts">Restaurnts</option>
-                    <option value="sites">Sites</option>
-                    <option value="shopping">Shopping</option>
-                    <option value="transportation">Transportation</option>
-                </Form.Control>
-                <div className="error">{this.state.errorCategory}</div>
-            </Form.Group>
-            <div className="importance">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="mostimportant" 
-                    value="1" onClick={this.changeImportance} checked />
-                    <label class="form-check-label" htmlFor="mostimportant">
-                        Must visit
-                </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="midimportant" 
-                    value="2" onClick={this.changeImportance} checked={this.state.importance === "2"} />
-                    <label class="form-check-label" htmlFor="midimportant">
-                        Happy To visit
-                </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="importance" id="leastimportant"
-                    value="3" onClick={this.changeImportance} checked={this.state.importance === "3"} />
-                    <label class="form-check-label" htmlFor="leastimportant">
-                        Visit on time left
-                    </label>
-                </div>
-            </div>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Control as="textarea"
-                    rows={3}
-                    placeholder="Add Free text"
-                    onChange={this.changeImportance}
-                    name="freeText" />
-            </Form.Group>
-        </Modal.Body>
-
-    <Modal.Footer>
-        <Button type="button"
-            variant="info"
-            onClick={this.addToMap}>
-            Add to my list
-    </Button>
-    </Modal.Footer>
-</Form>
-</Modal>
-        )
+                    <Modal.Footer>
+                        <Button type="button"
+                            variant="info"
+                            onClick={this.addToMap}>
+                            Add to my list
+                        </Button>
+                    </Modal.Footer>
+                </Form>
+            </Modal> )
 
     }
 }

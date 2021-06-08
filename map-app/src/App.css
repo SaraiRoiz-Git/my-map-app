@@ -137,8 +137,11 @@ body{
    display: none; 
  }
 
+
+ .list-group-country{
+  margin: 0 !important;
+ }
 .marker:hover>.marker-info {
- 
   background-color: rgba(68, 59, 68, 0.8);
   color : white !important;
   border-radius: 5px;

@@ -61,7 +61,7 @@ class HomePage extends React.Component {
                 this.state.freeText,
                 this.props.user.email)
             this.props.addMap(map);
-            window.location.href = '#/maps'
+            window.location.href = `#/list/${data.country_code}`
 
         } else {
             this.setState({
@@ -85,7 +85,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-     
+
         checkUserValidity(this.props.user)
         return (
             <Container fluid className="screen p-maps">
@@ -118,7 +118,7 @@ class HomePage extends React.Component {
                                     </Form.Group>
                                     <Form.Group>
                                         <Form.Control
-                                            name = "freeText"
+                                            name="freeText"
                                             as="textarea"
                                             rows={3}
                                             placeholder="Add Free text about this map"

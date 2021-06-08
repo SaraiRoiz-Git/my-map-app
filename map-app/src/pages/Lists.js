@@ -19,7 +19,7 @@ class Lists extends React.Component {
     }
 
     createlist = () => {
-        let sortedList = this.props.list.sort((a, b) => a.category > b.category && 1 || -1)
+        let sortedList = this.props.list.filter(place => place.code === this.id).sort((a, b) => a.category > b.category && 1 || -1)
         console.log("list", this.props.list)
         console.log("sorted list", sortedList)
         return sortedList.map((place) => {
@@ -133,8 +133,6 @@ class Lists extends React.Component {
                     handleClose={this.handleClose}
                     addPlace={this.props.addPlace}
                     user={this.props.user}
-
-
                 />
                 {modalItem}
             </Container>
