@@ -9,8 +9,11 @@ import AddPin from "../components/AddPin";
 class Lists extends React.Component {
     constructor(props) {
         super(props);
+
+
         this.url = window.location.href;
         this.id = this.props.match.params.id;
+        this.list = this.props.list.filter(place => place.code === this.id);
         this.latlng = getLatlngById(this.id);
         this.state = {
             isModalOpen: false,
@@ -19,9 +22,7 @@ class Lists extends React.Component {
     }
 
     createlist = () => {
-        let sortedList = this.props.list.filter(place => place.code === this.id).sort((a, b) => a.category > b.category && 1 || -1)
-        console.log("list", this.props.list)
-        console.log("sorted list", sortedList)
+        let sortedList = this.list.sort((a, b) => a.category > b.category && 1 || -1)
         return sortedList.map((place) => {
             if (place.code === this.id) {
 
@@ -35,9 +36,6 @@ class Lists extends React.Component {
                     <Card.Subtitle>
                         <span className="mb-2 text-muted">{place.category} </span>
                     </Card.Subtitle>
-                    <Card.Text>
-                        {place.freeText}
-                    </Card.Text>
                 </ListGroup.Item>)
             }
             return null
@@ -92,6 +90,7 @@ class Lists extends React.Component {
 
         checkUserValidity(this.props.user)
         const list = this.createlist();
+        list.map(place => console.log("lol", place.className))
         const modalItem = this.checkValidity();
 
         const title = countries.find(country => {
@@ -122,8 +121,9 @@ class Lists extends React.Component {
                     <Col sm="12" md="9" lg="9" className="gmap-container">
                         <GMap className="map-container my-auto"
                             center={this.latlng}
-                            places={this.props.list}
+                            places={this.list}
                             showItem={this.showItem}
+                            handleClose={this.handleClose}
                         ></GMap>
                     </Col>
                 </Row>
@@ -133,6 +133,8 @@ class Lists extends React.Component {
                     handleClose={this.handleClose}
                     addPlace={this.props.addPlace}
                     user={this.props.user}
+
+
                 />
                 {modalItem}
             </Container>

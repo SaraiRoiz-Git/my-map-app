@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Maps from './pages/Maps';
 import Lists from './pages/Lists';
+import { checkUserValidity } from './utility';
 class App extends React.Component {
 
   constructor(props) {
@@ -28,12 +29,13 @@ class App extends React.Component {
       placesData = JSON.parse(localStorage.localPlaces);
     }
 
+    let activeUser = [];
+    if (localStorage.localUser) {
+      activeUser = JSON.parse(localStorage.localUser);
+    }
+
     this.state = {
-      user: {
-        pwd: "",
-        email: "",
-        name: ""
-      },
+      user: activeUser,
       userslist: usersData,
       maps: mapsData,
       places: placesData
@@ -42,13 +44,17 @@ class App extends React.Component {
   }
   // log out from app
   logout = () => {
+    const localUser = JSON.stringify(null);
+    localStorage.localUser = localUser
     this.setState({
       user: null
     })
-
+    
   }
   // update the user on the app
   login = (user) => {
+    const localUser = JSON.stringify(user);
+    localStorage.localUser = localUser
     this.setState({
       user: user
 
@@ -82,12 +88,9 @@ class App extends React.Component {
     this.setState({
       places: this.state.places.concat(place)
     })
-
-
   }
 
   placeMark = (currPlace, className) => {
-    // console.log("placeMark inside",currPlace) 
     const index = this.state.places.findIndex((place) => place.id === currPlace.id);
     let places = [...this.state.places]
     places[index].className = className;
@@ -95,9 +98,9 @@ class App extends React.Component {
   }
 
   render() {
-    const maps = (this.state.maps && this.state.user) ? this.state.maps.filter(map => map.email === this.state.user.email) : []
-    const pins = (this.state.places && this.state.user) ? this.state.places.filter(pin => pin.email === this.state.user.email) : []
-    console.log("placeMark out side", this.state.places)
+    const maps = (this.state.maps && this.state.user) ? this.state.maps.filter(map => map.email === this.state.user.email) : [{}]
+    const pins = (this.state.places && this.state.user) ? this.state.places.filter(pin => pin.email === this.state.user.email) : [{}]
+    checkUserValidity(this.state.user)
     return (
       <HashRouter>
         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}>

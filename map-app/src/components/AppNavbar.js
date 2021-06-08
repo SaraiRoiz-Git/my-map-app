@@ -10,9 +10,9 @@ class AppNavbar extends React.Component {
 
     }
     render() {
-        const logout = this.props.user ? <Nav.Link href="#/home"
+        const logout = this.props.user ? <Nav.Link href="#/login"
             onClick={() => this.props.logout()}>Sign out</Nav.Link> : null;
-        const userName = (this.props.user) ? <Nav.Link href="#/login" >Hello {this.props.user.name}</Nav.Link> : null;
+        const userName = (this.props.user) ? <Nav.Link  >Hello {this.props.user.name}</Nav.Link> : null;
 
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">

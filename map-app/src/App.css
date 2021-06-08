@@ -120,6 +120,7 @@ body{
   width: 30px;
   height: 45px;
   background-size: cover;
+  z-index: 1  !important;
 }
 
 .marker-place:hover{
@@ -131,7 +132,7 @@ body{
 .pin-marker{
   width: 40px;
   height: 60px;
-  z-index: 9999 !important;
+  z-index: 9999!important;
 }
 .marker-info{
    display: none; 
@@ -148,6 +149,7 @@ body{
   padding: 10px;
   font-size: 1rem;
   display:inline-block;
+  z-index: 9999!important;
 
 }
 .list-group-item{
@@ -157,7 +159,7 @@ body{
 
 .p-lists{
   height: 100vh;
-  overflow:scroll;
+  overflow-y:scroll;
 }
 .p-maps{
   margin: auto;
@@ -263,13 +265,13 @@ g{
 }
 
 .list-hotels{
-  border-left: 10px solid rgb(160, 46, 46) !important ;
+  border-left: 10px solid #e52824 !important ;
 }
 .list-market-place{
   border-left: 10px solid rgb(26, 128, 68) !important ;
 }
 .list-restaurnts{
-  border-left: 10px solid rgb(74, 47, 173) !important ;
+  border-left: 10px solid rgba(21, 35, 235, 0.664) !important ;
 }
 .list-sites{
   border-left: 10px solid rgb(227, 241, 20) !important ;
@@ -278,7 +280,7 @@ g{
   border-left: 10px solid rgb(36, 35, 35) !important ;
 }
 .list-shopping{
-  border-left: 10px solid rgb(168, 70, 160) !important ;
+  border-left: 10px solid #bc4d97 !important ;
 }
 @media screen and (max-width: 768px){
 

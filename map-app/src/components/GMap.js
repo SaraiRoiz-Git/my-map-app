@@ -16,6 +16,7 @@ class GMap extends React.Component {
                     lat={place.lat}
                     lng={place.lng} 
                     showItem={this.props.showItem}
+                    handleClose = {this.props.handleClose}
                 >
                 </Marker>)
             })
