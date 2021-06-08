@@ -49,12 +49,9 @@ class App extends React.Component {
   }
   // update the user on the app
   login = (user) => {
-    const maps = this.state.maps.filter(map => map.email === user.email)
-    const pins = this.state.places.filter(pin => pin.email === user.email)
     this.setState({
-      user: user,
-      places: pins,
-      maps: maps
+      user: user
+
     })
   }
   // add new user for list of users
@@ -89,16 +86,18 @@ class App extends React.Component {
 
   }
 
-  placeMark = (currPlace,className) => {
+  placeMark = (currPlace, className) => {
     // console.log("placeMark inside",currPlace) 
     const index = this.state.places.findIndex((place) => place.id === currPlace.id);
-   let places = [...this.state.places]
-   places[index].className = className;
-    this.setState({ places:places});
+    let places = [...this.state.places]
+    places[index].className = className;
+    this.setState({ places: places });
   }
 
   render() {
-    console.log("placeMark out side",this.state.places) 
+    const maps = (this.state.maps && this.state.user) ? this.state.maps.filter(map => map.email === this.state.user.email) : []
+    const pins = (this.state.places && this.state.user) ? this.state.places.filter(pin => pin.email === this.state.user.email) : []
+    console.log("placeMark out side", this.state.places)
     return (
       <HashRouter>
         <Route exact path={['/home', '/maps', '/list/:id', '/edit-list/:id']}>
@@ -111,7 +110,7 @@ class App extends React.Component {
           <HomePage
             user={this.state.user}
             addMap={this.addMap}
-            list={this.state.maps}
+            list={maps}
           ></HomePage>
         </Route>
 
@@ -132,17 +131,17 @@ class App extends React.Component {
         <Route exact path={'/maps'}>
           <Maps
             user={this.state.user}
-            list={this.state.maps}>
+            list={maps}>
           </Maps>
         </Route>
 
         <Route exact path={'/list/:id'}>
           <Lists
             user={this.state.user}
-            list={this.state.places}
+            list={pins}
             addPlace={this.addPlace}
             placeMark={this.placeMark}>
-  
+
           </Lists>
         </Route>
 
