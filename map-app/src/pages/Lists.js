@@ -16,13 +16,19 @@ class Lists extends React.Component {
         this.list = this.props.list.filter(place => place.code === this.id);
         this.latlng = getLatlngById(this.id);
         this.state = {
+            list:this.list,
             isModalOpen: false,
             isMiniModalOpen: false,
         }
     }
 
+    addToList=(place)=>{
+       this.setState( {list:this.list.concat(place)})
+    }
+ 
     createlist = () => {
-        let sortedList = this.list.sort((a, b) => a.category > b.category && 1 || -1)
+        let sortedList = this.state.list.sort((a, b) => a.category > b.category && 1 || -1)
+        console.log("sortedList",sortedList)
         return sortedList.map((place) => {
             if (place.code === this.id) {
 
@@ -90,7 +96,6 @@ class Lists extends React.Component {
 
         checkUserValidity(this.props.user)
         const list = this.createlist();
-        list.map(place => console.log("lol", place.className))
         const modalItem = this.checkValidity();
 
         const title = countries.find(country => {
@@ -133,8 +138,7 @@ class Lists extends React.Component {
                     handleClose={this.handleClose}
                     addPlace={this.props.addPlace}
                     user={this.props.user}
-
-
+                    addToList={this.addToList}
                 />
                 {modalItem}
             </Container>

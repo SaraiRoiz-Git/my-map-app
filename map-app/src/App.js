@@ -98,6 +98,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("______________",this.state.places)
     const maps = (this.state.maps && this.state.user) ? this.state.maps.filter(map => map.email === this.state.user.email) : [{}]
     const pins = (this.state.places && this.state.user) ? this.state.places.filter(pin => pin.email === this.state.user.email) : [{}]
     checkUserValidity(this.state.user)

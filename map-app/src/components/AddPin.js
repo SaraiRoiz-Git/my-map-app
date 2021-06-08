@@ -8,7 +8,7 @@ class AddPin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title:"",
+            title: "",
             importance: "1"
         }
     }
@@ -27,17 +27,17 @@ class AddPin extends React.Component {
     }
 
     addToMap = () => {
-        if( !this.state.address){
+        if (!this.state.address) {
             this.setState({
-                error:"*Please enter valid address"
-            })  
+                error: "*Please enter valid address"
+            })
         }
-        if (!this.state.category){
+        if (!this.state.category) {
             this.setState({
-                errorCategory:"*Please choose category"
-            })  
+                errorCategory: "*Please choose category"
+            })
         }
-        else{
+        else {
             const place = new Pin(
                 this.props.id,
                 this.state.category,
@@ -50,13 +50,14 @@ class AddPin extends React.Component {
                 this.props.user.email
             )
             this.props.addPlace(place)
+            this.props.addToList(place)
             this.props.handleClose("isModalOpen")
         }
     }
     render() {
 
         return (
-            <Modal show={this.props.isModalOpen} onHide={()=>this.props.handleClose("isModalOpen")}>
+            <Modal show={this.props.isModalOpen} onHide={() => this.props.handleClose("isModalOpen")}>
                 <Form >
                     <Modal.Header closeButton>
                         <Modal.Title>
@@ -66,12 +67,12 @@ class AddPin extends React.Component {
                     <Modal.Body >
                         <Autocomplete
                             updateAdress={this.updateAdress}
-                            id={this.props.id} >      
-                        </Autocomplete> 
-                    
+                            id={this.props.id} >
+                        </Autocomplete>
+
                         <Form.Group className="add-error">
                             <div className="error">{this.state.error}</div>
-                        </Form.Group>           
+                        </Form.Group>
                         <Form.Group className="add-to-list">
                             <Form.Control type="text"
                                 name="title"
@@ -80,7 +81,7 @@ class AddPin extends React.Component {
                                 onChange={this.changeImportance} />
                         </Form.Group>
                         <Form.Group controlId="exampleForm.SelectCustom">
-                             <Form.Control as="select"
+                            <Form.Control as="select"
                                 name="category"
                                 onChange={this.changeImportance}
                                 value={this.state.category} custom>
@@ -92,21 +93,21 @@ class AddPin extends React.Component {
                                 <option value="shopping">Shopping</option>
                                 <option value="transportation">Transportation</option>
                             </Form.Control>
-                                <div className="error">{this.state.errorCategory}</div>
+                            <div className="error">{this.state.errorCategory}</div>
                         </Form.Group>
                         <div className="importance">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="importance" id="mostimportant" 
+                                <input class="form-check-input" type="radio" name="importance" id="mostimportant"
                                     value="1" onClick={this.changeImportance} checked />
                                 <label class="form-check-label" htmlFor="mostimportant">
-                                        Must visit
+                                    Must visit
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="importance" id="midimportant" 
+                                <input class="form-check-input" type="radio" name="importance" id="midimportant"
                                     value="2" onClick={this.changeImportance} checked={this.state.importance === "2"} />
                                 <label class="form-check-label" htmlFor="midimportant">
-                                        Happy To visit
+                                    Happy To visit
                                 </label>
                             </div>
                             <div class="form-check">
@@ -122,7 +123,7 @@ class AddPin extends React.Component {
                                 rows={3}
                                 placeholder="Add Free text"
                                 onChange={this.changeImportance}
-                                name="freeText" 
+                                name="freeText"
                             />
                         </Form.Group>
                     </Modal.Body>
@@ -135,7 +136,7 @@ class AddPin extends React.Component {
                         </Button>
                     </Modal.Footer>
                 </Form>
-            </Modal> )
+            </Modal>)
 
     }
 }
