@@ -49,6 +49,7 @@ class AddPin extends React.Component {
                 this.state.marker.lng,
                 this.props.user.email
             )
+            this.props.changeZoom(this.state.marker.lat,this.state.marker.lng)
             this.props.addToList(place)
             this.props.handleClose("isModalOpen")
         }

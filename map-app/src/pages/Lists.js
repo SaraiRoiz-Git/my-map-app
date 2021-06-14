@@ -14,8 +14,10 @@ class Lists extends React.Component {
         this.url = window.location.href;
         this.id = this.props.match.params.id;
         this.list = this.props.list.filter(place => place.code === this.id);
-        this.latlng = getLatlngById(this.id);
+
         this.state = {
+            latlng: getLatlngById(this.id),
+            zoom:4,
             list: this.list,
             isModalOpen: false,
             isMiniModalOpen: false,
@@ -99,8 +101,20 @@ class Lists extends React.Component {
 
         }
     }
-    render() {
 
+    changeZoom=(lat,lng)=>{
+        const latLng =[lat,lng]
+        this.setState({
+            latlng:latLng,
+            zoom:7
+        })
+
+        
+    }
+   
+    render() {
+        console.log("zoom",this.state.zoom)
+        console.log("zoom",this.state.latlng)
         checkUserValidity(this.props.user)
         const list = this.createlist();
         const modalItem = this.checkValidity();
@@ -132,7 +146,8 @@ class Lists extends React.Component {
                     </Col>
                     <Col sm="12" md="9" lg="9" className="gmap-container">
                         <GMap className="map-container my-auto"
-                            center={this.latlng}
+                            center={this.state.latlng}
+                            zoom={this.state.zoom}
                             places={this.state.list}
                             showItem={this.showItem}
                             handleClose={this.handleClose}
@@ -143,9 +158,9 @@ class Lists extends React.Component {
                     id={this.id}
                     isModalOpen={this.state.isModalOpen}
                     handleClose={this.handleClose}
-
                     user={this.props.user}
                     addToList={this.addToList}
+                    changeZoom={this.changeZoom}
                 />
                 {modalItem}
             </Container>

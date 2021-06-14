@@ -91,9 +91,8 @@ body{
   background-size: cover;
 }
 
-.hotels{width: 30px;
-  background: url(".\\img\\hotels.svg") ;
-  background-size: cover;
+.market-place{
+  background: url(".\\img\\market-place.svg") ;
 }
 
 
@@ -105,7 +104,6 @@ body{
 }
 .hotels{
   background: url(".\\img\\hotels.svg") ;
-
 }
 
 .shopping{
