@@ -94,8 +94,6 @@ body{
 .market-place{
   background: url(".\\img\\market-place.svg") ;
 }
-
-
 .restaurnts{
   background: url(".\\img\\restaurnts.svg") ;
 }
@@ -273,7 +271,7 @@ g{
   border-left: 10px solid rgb(227, 241, 20) !important ;
 }
 .list-transportation{
-  border-left: 10px solid rgb(36, 35, 35) !important ;
+  border-left: 10px solid rgb(2,225,186) !important ;
 }
 .list-shopping{
   border-left: 10px solid #bc4d97 !important ;
