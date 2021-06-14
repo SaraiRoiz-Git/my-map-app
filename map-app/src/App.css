@@ -239,7 +239,7 @@ g{
     height: 90vh;
   }
   .map-container{
-    /* margin:auto; */
+    margin:auto;
   }
   .p-maps{
     position:unset;

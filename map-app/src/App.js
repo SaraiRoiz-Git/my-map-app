@@ -75,8 +75,8 @@ class App extends React.Component {
   // add new map to map list
   addMap = (map) => {
     const localMapsString = JSON.stringify(this.state.maps.concat(map));
-
     localStorage.localMaps = localMapsString;
+   
     this.setState({
       maps: this.state.maps.concat(map)
     })
@@ -90,6 +90,7 @@ class App extends React.Component {
     })
   }
 
+
   placeMark = (currPlace, className) => {
     const index = this.state.places.findIndex((place) => place.id === currPlace.id);
     let places = [...this.state.places]
@@ -98,7 +99,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("______________",this.state.places)
     const maps = (this.state.maps && this.state.user) ? this.state.maps.filter(map => map.email === this.state.user.email) : [{}]
     const pins = (this.state.places && this.state.user) ? this.state.places.filter(pin => pin.email === this.state.user.email) : [{}]
     checkUserValidity(this.state.user)
