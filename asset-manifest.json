@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-map-app/static/css/main.86ffca2c.chunk.css",
+    "main.css": "/my-map-app/static/css/main.f602fefc.chunk.css",
     "main.js": "/my-map-app/static/js/main.0f667d0b.chunk.js",
     "main.js.map": "/my-map-app/static/js/main.0f667d0b.chunk.js.map",
     "runtime-main.js": "/my-map-app/static/js/runtime-main.edac73bb.js",
@@ -10,9 +10,9 @@
     "static/js/2.8c76ce35.chunk.js.map": "/my-map-app/static/js/2.8c76ce35.chunk.js.map",
     "index.html": "/my-map-app/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-map-app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.86ffca2c.chunk.css.map": "/my-map-app/static/css/main.86ffca2c.chunk.css.map",
+    "static/css/main.f602fefc.chunk.css.map": "/my-map-app/static/css/main.f602fefc.chunk.css.map",
     "static/js/2.8c76ce35.chunk.js.LICENSE.txt": "/my-map-app/static/js/2.8c76ce35.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/my-map-app/static/media/transportation.94ad60db.svg",
+    "static/media/App.css": "/my-map-app/static/media/transportation.1fed8cfc.svg",
     "static/media/logo.5636fbfa.svg": "/my-map-app/static/media/logo.5636fbfa.svg",
     "static/media/logoNav.efbdf2f5.svg": "/my-map-app/static/media/logoNav.efbdf2f5.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.edac73bb.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.8c76ce35.chunk.js",
-    "static/css/main.86ffca2c.chunk.css",
+    "static/css/main.f602fefc.chunk.css",
     "static/js/main.0f667d0b.chunk.js"
   ]
 }
