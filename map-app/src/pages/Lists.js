@@ -23,6 +23,7 @@ class Lists extends React.Component {
     }
 
     addToList=(place)=>{
+        this.props.addPlace(place)
        this.setState( {list:this.list.concat(place)})
     }
  
@@ -86,6 +87,12 @@ class Lists extends React.Component {
                         <p><b>Rate: </b>{this.chooseRate(this.state.place.rate)}</p>
                         <p><b>Address: </b>{this.state.place.address}</p>
                         <p>{this.state.place.freeText}</p>
+                        <Button className="remove-item" type="button"
+                            variant="info"
+                                        onClick={() => this.props.removeItem(this.state.place)}
+                                    >
+                                        Add new Place
+                        </Button>
                     </Modal.Body>
                 </Modal>
             )
@@ -136,7 +143,7 @@ class Lists extends React.Component {
                     id={this.id}
                     isModalOpen={this.state.isModalOpen}
                     handleClose={this.handleClose}
-                    addPlace={this.props.addPlace}
+                  
                     user={this.props.user}
                     addToList={this.addToList}
                 />

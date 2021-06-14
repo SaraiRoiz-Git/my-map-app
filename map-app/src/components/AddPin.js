@@ -49,7 +49,6 @@ class AddPin extends React.Component {
                 this.state.marker.lng,
                 this.props.user.email
             )
-            this.props.addPlace(place)
             this.props.addToList(place)
             this.props.handleClose("isModalOpen")
         }
