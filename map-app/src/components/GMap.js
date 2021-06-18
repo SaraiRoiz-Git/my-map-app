@@ -26,7 +26,8 @@ class GMap extends React.Component {
     render() {
 
         const markers = this.createMarkers(this.props.places)
-        console.log("markers",markers)
+        console.log("zoom",this.props.zoom)
+        console.log("center",this.props.center)
         return (
             <div className="g-map">
                 <GoogleMapReact

@@ -31,7 +31,6 @@ class Lists extends React.Component {
 
     createlist = () => {
         let sortedList = this.state.list.sort((a, b) => a.category > b.category && 1 || -1)
-        console.log("sortedList", sortedList)
         return sortedList.map((place) => {
             if (place.code === this.id) {
 
@@ -105,7 +104,7 @@ class Lists extends React.Component {
     changeZoom=(lat,lng)=>{
         const latLng =[lat,lng]
         this.setState({
-            latlng:latLng,
+            latlng:[lat,lng],
             zoom:7
         })
 
@@ -113,8 +112,6 @@ class Lists extends React.Component {
     }
    
     render() {
-        console.log("zoom",this.state.zoom)
-        console.log("zoom",this.state.latlng)
         checkUserValidity(this.props.user)
         const list = this.createlist();
         const modalItem = this.checkValidity();
