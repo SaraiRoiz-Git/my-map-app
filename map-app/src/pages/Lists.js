@@ -105,7 +105,7 @@ class Lists extends React.Component {
         const latLng =[lat,lng]
         this.setState({
             latlng:[lat,lng],
-            zoom:7
+            zoom:16
         })
 
         

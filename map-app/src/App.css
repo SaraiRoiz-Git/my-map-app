@@ -87,29 +87,29 @@ body{
 .marker-color{
   width: 30px;
   height: 45px;
-  background: url(".\\img\\1.svg") ; 
+  background: url("./img/1.svg") ; 
   background-size: cover;
 }
 
 .market-place{
-  background: url(".\\img\\market-place.svg") ;
+  background: url("./img/market-place.svg") ;
 }
 .restaurnts{
-  background: url(".\\img\\restaurnts.svg") ;
+  background: url("./img/restaurnts.svg") ;
 }
 .sites{
-  background: url(".\\img\\sites.svg") ;
+  background: url("./img/sites.svg") ;
 }
 .hotels{
-  background: url(".\\img\\hotels.svg") ;
+  background: url("./img/hotels.svg") ;
 }
 
 .shopping{
-  background: url(".\\img\\shopping.svg");
+  background: url("./img/shopping.svg");
 }
 
 .transportation{
-  background: url(".\\img\\transportation.svg") ;
+  background: url("./img/transportation.svg") ;
 }
 
 .marker-place{
@@ -119,7 +119,7 @@ body{
   z-index: 1  !important;
 }
 
-.marker-place:hover{
+.marker:hover .marker-place {
   transform: scale(1.5);
   z-index: 9999 !important;
 }
