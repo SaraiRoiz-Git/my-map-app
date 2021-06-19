@@ -8,7 +8,6 @@ class AddPin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "",
             importance: "1"
         }
     }
@@ -32,6 +31,11 @@ class AddPin extends React.Component {
                 error: "*Please enter valid address"
             })
         }
+        if (!this.state.title) {
+            this.setState({
+                errorTitle: "*Please enter title"
+            })
+        }
         if (!this.state.category) {
             this.setState({
                 errorCategory: "*Please choose category"
@@ -49,7 +53,7 @@ class AddPin extends React.Component {
                 this.state.marker.lng,
                 this.props.user.email
             )
-            this.props.changeZoom(this.state.marker.lat,this.state.marker.lng)
+            this.props.changeZoom(this.state.marker.lat, this.state.marker.lng)
             this.props.addToList(place)
             this.props.handleClose("isModalOpen")
         }
@@ -79,6 +83,7 @@ class AddPin extends React.Component {
                                 placeholder="My title"
                                 value={this.state.title}
                                 onChange={this.changeImportance} />
+                            <div className="error">{this.state.errorTitle}</div>
                         </Form.Group>
                         <Form.Group controlId="exampleForm.SelectCustom">
                             <Form.Control as="select"
