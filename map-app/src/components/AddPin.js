@@ -142,7 +142,6 @@ class AddPin extends React.Component {
                     </Modal.Footer>
                 </Form>
             </Modal>)
-
     }
 }
 
