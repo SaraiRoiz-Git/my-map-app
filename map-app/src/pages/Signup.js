@@ -140,7 +140,7 @@ class Signup extends React.Component {
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
-                                <div>Alredy have acount? click <Link to="/login">Here</Link> </div>
+                                <div>Already have acount? click <Link to="/login">Here</Link> </div>
 
                             </Form.Group>
 

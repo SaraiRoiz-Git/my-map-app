@@ -49,7 +49,7 @@ class App extends React.Component {
     this.setState({
       user: null
     })
-    
+
   }
   // update the user on the app
   login = (user) => {
@@ -76,7 +76,7 @@ class App extends React.Component {
   addMap = (map) => {
     const localMapsString = JSON.stringify(this.state.maps.concat(map));
     localStorage.localMaps = localMapsString;
-   
+
     this.setState({
       maps: this.state.maps.concat(map)
     })
@@ -128,7 +128,6 @@ class App extends React.Component {
           <Signup
             addUser={this.addUser}
             users={this.state.userslist}>
-
           </Signup>
         </Route>
 
@@ -145,7 +144,6 @@ class App extends React.Component {
             list={pins}
             addPlace={this.addPlace}
             placeMark={this.placeMark}>
-
           </Lists>
         </Route>
 
